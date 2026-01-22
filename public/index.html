@@ -115,7 +115,7 @@
 
     .hero-visual {
       position: relative;
-      min-height: 180px;
+      min-height: 200px;
       border-radius: 18px;
       overflow: hidden;
       background: radial-gradient(circle at top, #ffe3a0 0, #003b7a 55%, #00142c 100%);
@@ -126,8 +126,11 @@
       inset: 0;
       background-size: cover;
       background-position: center bottom;
-      opacity: 0.6;
-      filter: saturate(1.1);
+      opacity: 0.95;
+      filter: saturate(1.05);
+      /* Buradaki yolu kendi fotoğrafına göre değiştir:
+         public/assets/antalya-tower.jpg */
+      background-image: url("assets/antalya-tower.jpg");
     }
 
     .hero-visual::after {
@@ -138,6 +141,7 @@
       font-size: 0.8rem;
       letter-spacing: 0.18em;
       color: rgba(255,255,255,0.85);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
     }
 
     /* MAIN LAYOUT */
@@ -189,6 +193,84 @@
       margin: 20px 0 10px;
     }
 
+    /* SEARCH PANEL */
+
+    .search-panel {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 16px 18px 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+      margin-top: -28px;
+      margin-bottom: 26px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .search-panel h2 {
+      font-size: 1rem;
+      margin: 0 0 8px;
+    }
+
+    .search-panel p {
+      margin: 0 0 10px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .search-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .search-row input[type="search"] {
+      flex: 1 1 220px;
+      padding: 8px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccd3e0;
+      font-size: 0.9rem;
+    }
+
+    .search-row button {
+      padding: 8px 14px;
+      border-radius: 4px;
+      border: none;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .search-results {
+      margin-top: 10px;
+      font-size: 0.84rem;
+    }
+
+    .search-result-item {
+      padding: 6px 0;
+      border-top: 1px solid #e0e4ee;
+    }
+
+    .search-result-item:first-of-type {
+      border-top: none;
+    }
+
+    .search-result-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .search-result-meta {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .search-result-link {
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+
     /* BULLETIN LIST */
 
     .bulletin {
@@ -200,11 +282,6 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 12px;
-    }
-
-    .bulletin main {
-      padding: 0;
-      max-width: none;
     }
 
     .bulletin-text {
@@ -311,6 +388,12 @@
       margin-bottom: 4px;
     }
 
+    footer .legal {
+      max-width: 780px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -323,6 +406,12 @@
       }
       .hero-inner {
         grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-bottom: 42px;
+      }
+      .search-panel {
+        margin-top: -10px;
       }
       .bulletin {
         grid-template-columns: 1fr;
@@ -363,13 +452,27 @@
         </div>
       </div>
       <div class="hero-visual">
-        <!-- İstersen buraya gerçek kule fotoğrafını background-image ile ekleyebilirsin -->
         <div class="tower-overlay"></div>
       </div>
     </div>
   </section>
 
   <main>
+
+    <!-- ARAMA PANELİ -->
+    <section class="search-panel" aria-labelledby="search-title">
+      <h2 id="search-title">Dokümanlarda Ara</h2>
+      <p>
+        Safety bültenleri, eğitim sunumları ve notlar içinde arama yapın.
+        Şimdilik başlık ve kısa özetler üzerinde arama yapılmaktadır; ileride PDF içerikleri de eklenecektir.
+      </p>
+      <form id="site-search-form" class="search-row">
+        <input type="search" id="site-search-input" placeholder="Örneğin: fraseoloji, runway incursion, ROT..." aria-label="Portal içi arama" />
+        <button type="submit">Ara</button>
+      </form>
+      <div id="search-results" class="search-results" aria-live="polite"></div>
+    </section>
+
     <!-- ÜST KARTLAR -->
     <section class="cards">
       <div class="card">
@@ -444,9 +547,99 @@
   <!-- FOOTER -->
   <footer>
     <strong>Antalya Tower Eğitim Birimi</strong>
-    <div>Bu portal, Antalya Meydan Kontrol birimi için eğitim ve emniyet farkındalığı amaçlıdır.</div>
-    <div>Resmî doküman veya operasyonel talimat yerine geçmez.</div>
-    <div>Teoman Köse tarafından hazırlanmakta ve yönetilmektedir.</div>
+    <div class="legal">
+      Bu portal, Antalya Meydan Kontrol birimi için eğitim ve emniyet farkındalığı amaçlıdır;
+      resmî talimat, prosedür veya kurum görüşü yerine geçmez. Bu sitedeki yayınlar tek başına
+      operasyonel karar veya savunma gerekçesi olarak kullanılamaz.
+      <br><br>
+      Portal içeriği Teoman Köse tarafından hazırlanmakta ve yönetilmektedir.
+    </div>
   </footer>
+
+  <!-- BASİT İÇERİK ARAMA -->
+  <script>
+    // Şimdilik başlık + kısa açıklama üzerine çalışan basit arama.
+    // İleride buraya PDF içeriklerinden çıkarılmış özetler eklenebilir.
+    const documents = [
+      {
+        type: "Safety Bulletin",
+        title: "SB 2026/1 – Clear, Calm, In Control",
+        url: "/safety/sb-2026-01",
+        tags: "sb2026 üslup iletişim r/t phraseology",
+        summary: "Kule–pilot haberleşmesinde net, sakin ve standart fraseoloji kullanımı."
+      },
+      {
+        type: "Safety Bulletin",
+        title: "SB 2025/5 – Runway Incursion Önleme",
+        url: "/safety/sb-2025-05",
+        tags: "sb2025 runway incursion pist ihlali taksi talimatı readback",
+        summary: "Pist ihlallerini azaltmaya yönelik örnekler ve hatırlatmalar."
+      },
+      {
+        type: "Eğitim Materyali",
+        title: "Meydan Kontrol Fraseoloji Checklist",
+        url: "/training/fraseoloji-checklist",
+        tags: "phraseology checklist meydan kontrol fraseoloji",
+        summary: "Standart ICAO fraseolojisine yönelik kontrol listesi."
+      },
+      {
+        type: "Eğitim Materyali",
+        title: "Runway Occupancy Time – Örnek Senaryolar",
+        url: "/training/rot-ornek-senaryolar",
+        tags: "runway occupancy time rot line-up vacate hiro",
+        summary: "ROT optimizasyonu ve senaryo örnekleri."
+      },
+      {
+        type: "Eğitim Materyali",
+        title: "ATCO–Pilot İletişim Üslubu Örnekleri",
+        url: "/training/atco-pilot-uslup-ornekleri",
+        tags: "üslup iletişim calm clear unambiguous",
+        summary: "Yanlış / doğru üslup karşılaştırmaları."
+      }
+    ];
+
+    const form = document.getElementById("site-search-form");
+    const input = document.getElementById("site-search-input");
+    const resultsEl = document.getElementById("search-results");
+
+    function renderResults(items, query) {
+      if (!query) {
+        resultsEl.innerHTML = "";
+        return;
+      }
+      if (!items.length) {
+        resultsEl.innerHTML = "<div>Sonuç bulunamadı.</div>";
+        return;
+      }
+      resultsEl.innerHTML = items.map(item => `
+        <div class="search-result-item">
+          <div class="search-result-title">${item.title}</div>
+          <div class="search-result-meta">${item.type}</div>
+          <div>${item.summary}</div>
+          <div class="search-result-link"><a href="${item.url}">Dokümana git</a></div>
+        </div>
+      `).join("");
+    }
+
+    function handleSearch(event) {
+      if (event) event.preventDefault();
+      const q = input.value.trim().toLowerCase();
+      if (!q) {
+        renderResults([], "");
+        return;
+      }
+      const matches = documents.filter(doc => {
+        const haystack = (doc.title + " " + doc.summary + " " + doc.tags).toLowerCase();
+        return haystack.includes(q);
+      });
+      renderResults(matches, q);
+    }
+
+    form.addEventListener("submit", handleSearch);
+    input.addEventListener("input", function () {
+      // Kullanıcı yazarken de sonuçları güncelle
+      handleSearch();
+    });
+  </script>
 </body>
 </html>
