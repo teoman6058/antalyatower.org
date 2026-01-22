@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Antalya Tower Training &amp; Safety Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --blue-dark: #003b7a;
+      --blue: #0059a8;
+      --yellow: #ffc500;
+      --bg: #f1f4f9;
+      --card-bg: #ffffff;
+      --text-main: #122033;
+      --text-muted: #68758a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--blue-dark);
+      color: #fff;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--yellow);
+      padding-bottom: 4px;
+      opacity: 1;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      color: #fff;
+      padding: 64px 24px 56px;
+      background: linear-gradient(120deg, #01254b, #0057a4);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+
+    .hero p.sub {
+      margin: 0 0 18px;
+      font-size: 0.98rem;
+      max-width: 420px;
+    }
+
+    .hero-buttons a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-bottom: 6px;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #122033;
+    }
+
+    .btn-outline-light {
+      border: 1px solid #ffffff;
+      color: #ffffff;
+    }
+
+    .hero-tagline {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 10px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 180px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #ffe3a0 0, #003b7a 55%, #00142c 100%);
+    }
+
+    .tower-overlay {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center bottom;
+      opacity: 0.6;
+      filter: saturate(1.1);
+    }
+
+    .hero-visual::after {
+      content: "ANTALYA TOWER";
+      position: absolute;
+      left: 16px;
+      bottom: 14px;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* MAIN LAYOUT */
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 24px 56px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.98rem;
+    }
+
+    .card-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card a.card-btn {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 4px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin: 20px 0 10px;
+    }
+
+    /* BULLETIN LIST */
+
+    .bulletin {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 14px 16px 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+    }
+
+    .bulletin main {
+      padding: 0;
+      max-width: none;
+    }
+
+    .bulletin-text {
+      font-size: 0.9rem;
+    }
+
+    .bulletin-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .bulletin-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .bulletin-actions {
+      text-align: right;
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+      font-size: 0.8rem;
+      text-decoration: none;
+      background: #fff;
+    }
+
+    .btn-canva {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 4px;
+      background: var(--yellow);
+      color: #122033;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    /* TRAINING LIST */
+
+    .training-list {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      padding: 10px 16px;
+      font-size: 0.9rem;
+    }
+
+    .training-list details {
+      padding: 6px 0;
+      border-top: 1px solid #e0e4ee;
+    }
+
+    .training-list details:first-of-type {
+      border-top: none;
+    }
+
+    details summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    details summary::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 0.7rem;
+      color: var(--blue);
+    }
+
+    details[open] summary::before {
+      content: "▾";
+    }
+
+    .muted-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--blue-dark);
+      color: #fff;
+      text-align: center;
+      padding: 16px 12px 22px;
+      font-size: 0.8rem;
+    }
+
+    footer strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .bulletin {
+        grid-template-columns: 1fr;
+      }
+      .bulletin-actions {
+        text-align: left;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ÜST MENÜ -->
+  <header>
+    <div class="brand">ANTALYA TOWER</div>
+    <nav>
+      <a href="/" class="active">Ana Sayfa</a>
+      <a href="/safety">Safety</a>
+      <a href="/training">Eğitim</a>
+      <a href="/about">Hakkında</a>
+    </nav>
+  </header>
+
+  <!-- HERO BÖLÜMÜ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Antalya Tower<br>Training &amp; Safety Portal</h1>
+        <p class="sub">Meydan Kontrol birimi için eğitim ve emniyet dokümanları, safety bültenleri ve eğitim materyalleri.</p>
+        <div class="hero-buttons">
+          <a href="/safety" class="btn-primary">Safety Bültenleri</a>
+          <a href="/training" class="btn-outline-light">Eğitim Materyalleri</a>
+        </div>
+        <div class="hero-tagline">
+          Bu portal, operasyonel karar vermek için değil; eğitim ve farkındalık amacıyla hazırlanmıştır.
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- İstersen buraya gerçek kule fotoğrafını background-image ile ekleyebilirsin -->
+        <div class="tower-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ÜST KARTLAR -->
+    <section class="cards">
+      <div class="card">
+        <div class="card-title">Safety Bulletin</div>
+        <div class="card-desc">Güncel emniyet bültenleri ve özetleri.</div>
+        <a href="/safety" class="card-btn">Detay</a>
+      </div>
+      <div class="card">
+        <div class="card-title">Eğitim Materyali</div>
+        <div class="card-desc">Ders notları, sunumlar ve örnek senaryolar.</div>
+        <a href="/training" class="card-btn">Detay</a>
+      </div>
+      <div class="card">
+        <div class="card-title">Duyurular</div>
+        <div class="card-desc">Güncel eğitim ve safety duyuruları.</div>
+        <a href="/announcements" class="card-btn">Detay</a>
+      </div>
+    </section>
+
+    <!-- GÜNCEL SAFETY BÜLTENLER -->
+    <section>
+      <h2 class="section-title">Güncel Safety Bültenler</h2>
+
+      <div class="bulletin">
+        <div class="bulletin-text">
+          <div class="bulletin-title">SB 2026/1 – Clear, Calm, In Control</div>
+          <div class="bulletin-meta">18 Ocak 2026 • ATCO–Pilot iletişim üslubu</div>
+          <p>Kule–pilot haberleşmesinde net, sakin ve standart fraseoloji kullanımına yönelik farkındalık notları.</p>
+        </div>
+        <div class="bulletin-actions">
+          <a href="/safety/sb-2026-01" class="btn-outline">Detay</a>
+          <a href="#" class="btn-canva">Canva Posteri Gör</a>
+        </div>
+      </div>
+
+      <div class="bulletin">
+        <div class="bulletin-text">
+          <div class="bulletin-title">SB 2025/5 – Runway Incursion Önleme</div>
+          <div class="bulletin-meta">10 Kasım 2025 • Pist ihlallerine yönelik önlemler</div>
+          <p>Taksi talimatı, readback ve pozisyon raporlamasında pist ihlallerini azaltmaya yönelik örnekler ve hatırlatmalar.</p>
+        </div>
+        <div class="bulletin-actions">
+          <a href="/safety/sb-2025-05" class="btn-outline">Detay</a>
+          <a href="#" class="btn-canva">Canva Posteri Gör</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SON EĞİTİM MATERYALLERİ -->
+    <section>
+      <h2 class="section-title">Son Eğitim Materyalleri</h2>
+      <div class="training-list">
+        <details>
+          <summary>Meydan Kontrol Fraseoloji Checklist</summary>
+          <p>Standart ICAO fraseolojisine yönelik kontrol listesi ve örnek R/T cümleleri.</p>
+        </details>
+        <details>
+          <summary>Runway Occupancy Time – Örnek Senaryolar</summary>
+          <p>ROT optimizasyonu, line-up ve vacate senaryoları ile ilgili eğitim materyalleri.</p>
+        </details>
+        <details>
+          <summary>ATCO–Pilot İletişim Üslubu Örnekleri</summary>
+          <p>Yanlış / doğru üslup karşılaştırmaları, meydan kontrol için örnek diyaloglar.</p>
+        </details>
+      </div>
+      <div class="muted-note">
+        Ayrıntılı eğitim materyalleri ve PDF'ler, Eğitim bölümünde listelenir.
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Antalya Tower Eğitim Birimi</strong>
+    <div>Bu portal, Antalya Meydan Kontrol birimi için eğitim ve emniyet farkındalığı amaçlıdır.</div>
+    <div>Resmî doküman veya operasyonel talimat yerine geçmez.</div>
+    <div>Teoman Köse tarafından hazırlanmakta ve yönetilmektedir.</div>
+  </footer>
+</body>
+</html>
