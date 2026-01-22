@@ -128,7 +128,7 @@
       background-position: center bottom;
       opacity: 0.95;
       filter: saturate(1.05);
-      /* Buradaki yolu kendi fotoğrafına göre değiştir:
+      /* Kendi fotoğrafına göre yolu düzenle:
          public/assets/antalya-tower.jpg */
       background-image: url("assets/antalya-tower.jpg");
     }
@@ -276,12 +276,21 @@
     .bulletin {
       background: var(--card-bg);
       border-radius: 10px;
-      padding: 14px 16px 12px;
+      padding: 10px 14px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.04);
       margin-bottom: 10px;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       gap: 12px;
+      align-items: center;
+    }
+
+    .bulletin-thumb {
+      width: 84px;
+      height: 56px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: #c7d2e6;
     }
 
     .bulletin-text {
@@ -296,7 +305,7 @@
     .bulletin-meta {
       font-size: 0.78rem;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .bulletin-actions {
@@ -373,6 +382,44 @@
       margin-top: 8px;
     }
 
+    /* TRAINING PHOTOS */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .gallery-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      overflow: hidden;
+      font-size: 0.85rem;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-body {
+      padding: 8px 10px 10px;
+    }
+
+    .gallery-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .gallery-text {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
     /* FOOTER */
 
     footer {
@@ -414,9 +461,10 @@
         margin-top: -10px;
       }
       .bulletin {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto minmax(0, 1fr);
       }
       .bulletin-actions {
+        grid-column: 1 / -1;
         text-align: left;
         flex-direction: row;
         flex-wrap: wrap;
@@ -452,6 +500,7 @@
         </div>
       </div>
       <div class="hero-visual">
+        <!-- Kule fotoğrafı için overlay -->
         <div class="tower-overlay"></div>
       </div>
     </div>
@@ -467,7 +516,9 @@
         Şimdilik başlık ve kısa özetler üzerinde arama yapılmaktadır; ileride PDF içerikleri de eklenecektir.
       </p>
       <form id="site-search-form" class="search-row">
-        <input type="search" id="site-search-input" placeholder="Örneğin: fraseoloji, runway incursion, ROT..." aria-label="Portal içi arama" />
+        <input type="search" id="site-search-input"
+               placeholder="Örneğin: phraseology, runway incursion, ROT..."
+               aria-label="Portal içi arama" />
         <button type="submit">Ara</button>
       </form>
       <div id="search-results" class="search-results" aria-live="polite"></div>
@@ -492,11 +543,12 @@
       </div>
     </section>
 
-    <!-- GÜNCEL SAFETY BÜLTENLER -->
+    <!-- GÜNCEL SAFETY BÜLTENLER (FOTO İLE) -->
     <section>
       <h2 class="section-title">Güncel Safety Bültenler</h2>
 
       <div class="bulletin">
+        <img src="assets/sb-2026-1.jpg" alt="SB 2026/1 görseli" class="bulletin-thumb" />
         <div class="bulletin-text">
           <div class="bulletin-title">SB 2026/1 – Clear, Calm, In Control</div>
           <div class="bulletin-meta">18 Ocak 2026 • ATCO–Pilot iletişim üslubu</div>
@@ -509,6 +561,7 @@
       </div>
 
       <div class="bulletin">
+        <img src="assets/sb-2025-5.jpg" alt="SB 2025/5 görseli" class="bulletin-thumb" />
         <div class="bulletin-text">
           <div class="bulletin-title">SB 2025/5 – Runway Incursion Önleme</div>
           <div class="bulletin-meta">10 Kasım 2025 • Pist ihlallerine yönelik önlemler</div>
@@ -542,6 +595,34 @@
         Ayrıntılı eğitim materyalleri ve PDF'ler, Eğitim bölümünde listelenir.
       </div>
     </section>
+
+    <!-- EĞİTİMDEN KARELER (FOTO GALERİ) -->
+    <section>
+      <h2 class="section-title">Eğitimden Kareler</h2>
+      <div class="gallery">
+        <div class="gallery-card">
+          <img src="assets/training-01.jpg" alt="Simülatör seansı" />
+          <div class="gallery-body">
+            <div class="gallery-title">Simülatör Çalışması</div>
+            <div class="gallery-text">Yoğun trafik senaryosunda phraseology ve takım çalışması.</div>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/training-02.jpg" alt="Classroom oturumu" />
+          <div class="gallery-body">
+            <div class="gallery-title">Classroom Oturumu</div>
+            <div class="gallery-text">Runway incursion vakaları üzerinden grup tartışması.</div>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/training-03.jpg" alt="OJT süreci" />
+          <div class="gallery-body">
+            <div class="gallery-title">OJT Değerlendirmesi</div>
+            <div class="gallery-text">Pozisyon formları ve geri bildirim toplantısından bir kare.</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -552,14 +633,13 @@
       resmî talimat, prosedür veya kurum görüşü yerine geçmez. Bu sitedeki yayınlar tek başına
       operasyonel karar veya savunma gerekçesi olarak kullanılamaz.
       <br><br>
-      Portal içeriği Teoman Köse tarafından hazırlanmakta ve yönetilmektedir.
+      Portal içeriği Teoman Köse tarafından hazırlanmaktadır ve yönetilmektedir.
     </div>
   </footer>
 
   <!-- BASİT İÇERİK ARAMA -->
   <script>
     // Şimdilik başlık + kısa açıklama üzerine çalışan basit arama.
-    // İleride buraya PDF içeriklerinden çıkarılmış özetler eklenebilir.
     const documents = [
       {
         type: "Safety Bulletin",
@@ -637,7 +717,6 @@
 
     form.addEventListener("submit", handleSearch);
     input.addEventListener("input", function () {
-      // Kullanıcı yazarken de sonuçları güncelle
       handleSearch();
     });
   </script>
