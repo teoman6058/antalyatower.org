@@ -1,724 +1,822 @@
 <!DOCTYPE html>
-<html lang="tr">
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Antalya Tower Training &amp; Safety Portal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --blue-dark: #003b7a;
-      --blue: #0059a8;
-      --yellow: #ffc500;
-      --bg: #f1f4f9;
-      --card-bg: #ffffff;
-      --text-main: #122033;
-      --text-muted: #68758a;
-    }
 
-    * { box-sizing: border-box; }
+  <!-- Basic Page Needs
+	================================================== -->
+  <meta charset="utf-8">
+  <title>Educenter - Education HTML Template</title>
+
+  <!-- Mobile Specific Metas
+	================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Educenter HTML Template v1.0">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="educenter" />
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="plugins/aos/aos.css">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-    }
-
-    /* HEADER */
-
-    header {
-      background: var(--blue-dark);
-      color: #fff;
-      padding: 10px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      font-size: 0.95rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 0.9rem;
-      opacity: 0.85;
-    }
-
-    nav a.active {
-      border-bottom: 2px solid var(--yellow);
-      padding-bottom: 4px;
-      opacity: 1;
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      color: #fff;
-      padding: 64px 24px 56px;
-      background: linear-gradient(120deg, #01254b, #0057a4);
-      overflow: hidden;
-    }
-
-    .hero-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(1.9rem, 3vw, 2.4rem);
-      margin: 0 0 8px;
-      line-height: 1.2;
-    }
-
-    .hero p.sub {
-      margin: 0 0 18px;
-      font-size: 0.98rem;
-      max-width: 420px;
-    }
-
-    .hero-buttons a {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      margin-right: 10px;
-      margin-bottom: 6px;
-    }
-
-    .btn-primary {
-      background: var(--yellow);
-      color: #122033;
-    }
-
-    .btn-outline-light {
-      border: 1px solid #ffffff;
-      color: #ffffff;
-    }
-
-    .hero-tagline {
-      font-size: 0.85rem;
-      opacity: 0.85;
-      margin-top: 10px;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 200px;
-      border-radius: 18px;
-      overflow: hidden;
-      background: radial-gradient(circle at top, #ffe3a0 0, #003b7a 55%, #00142c 100%);
-    }
-
-    .tower-overlay {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center bottom;
-      opacity: 0.95;
-      filter: saturate(1.05);
-      /* Kendi fotoğrafına göre yolu düzenle:
-         public/assets/antalya-tower.jpg */
-      background-image: url("assets/antalya-tower.jpg");
-    }
-
-    .hero-visual::after {
-      content: "ANTALYA TOWER";
-      position: absolute;
-      left: 16px;
-      bottom: 14px;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.85);
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    }
-
-    /* MAIN LAYOUT */
-
-    main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 24px 24px 56px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 16px 18px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
-    }
-
-    .card-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 0.98rem;
-    }
-
-    .card-desc {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .card a.card-btn {
-      display: inline-block;
-      padding: 7px 13px;
-      border-radius: 4px;
-      background: var(--blue);
-      color: #fff;
-      font-size: 0.8rem;
-      text-decoration: none;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-      margin: 20px 0 10px;
-    }
-
-    /* SEARCH PANEL */
-
-    .search-panel {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 16px 18px 14px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
-      margin-top: -28px;
-      margin-bottom: 26px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .search-panel h2 {
-      font-size: 1rem;
-      margin: 0 0 8px;
-    }
-
-    .search-panel p {
-      margin: 0 0 10px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .search-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .search-row input[type="search"] {
-      flex: 1 1 220px;
-      padding: 8px 10px;
-      border-radius: 4px;
-      border: 1px solid #ccd3e0;
-      font-size: 0.9rem;
-    }
-
-    .search-row button {
-      padding: 8px 14px;
-      border-radius: 4px;
-      border: none;
-      background: var(--blue);
-      color: #fff;
-      font-size: 0.9rem;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .search-results {
-      margin-top: 10px;
-      font-size: 0.84rem;
-    }
-
-    .search-result-item {
-      padding: 6px 0;
-      border-top: 1px solid #e0e4ee;
-    }
-
-    .search-result-item:first-of-type {
-      border-top: none;
-    }
-
-    .search-result-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .search-result-meta {
-      color: var(--text-muted);
-      font-size: 0.78rem;
-    }
-
-    .search-result-link {
-      font-size: 0.8rem;
-      margin-top: 2px;
-    }
-
-    /* BULLETIN LIST */
-
-    .bulletin {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 10px 14px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-      margin-bottom: 10px;
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .bulletin-thumb {
-      width: 84px;
-      height: 56px;
-      border-radius: 6px;
-      object-fit: cover;
-      background: #c7d2e6;
-    }
-
-    .bulletin-text {
-      font-size: 0.9rem;
-    }
-
-    .bulletin-title {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .bulletin-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .bulletin-actions {
-      text-align: right;
-      white-space: nowrap;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      justify-content: center;
-    }
-
-    .btn-outline {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 4px;
-      border: 1px solid var(--blue);
-      color: var(--blue);
-      font-size: 0.8rem;
-      text-decoration: none;
-      background: #fff;
-    }
-
-    .btn-canva {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 4px;
-      background: var(--yellow);
-      color: #122033;
-      font-size: 0.8rem;
-      text-decoration: none;
-    }
-
-    /* TRAINING LIST */
-
-    .training-list {
-      background: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-      padding: 10px 16px;
-      font-size: 0.9rem;
-    }
-
-    .training-list details {
-      padding: 6px 0;
-      border-top: 1px solid #e0e4ee;
-    }
-
-    .training-list details:first-of-type {
-      border-top: none;
-    }
-
-    details summary {
-      cursor: pointer;
-      list-style: none;
-    }
-
-    details summary::-webkit-details-marker { display: none; }
-
-    details summary::before {
-      content: "▸";
-      display: inline-block;
-      margin-right: 6px;
-      font-size: 0.7rem;
-      color: var(--blue);
-    }
-
-    details[open] summary::before {
-      content: "▾";
-    }
-
-    .muted-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-
-    /* TRAINING PHOTOS */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    .gallery-card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-      overflow: hidden;
-      font-size: 0.85rem;
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .gallery-body {
-      padding: 8px 10px 10px;
-    }
-
-    .gallery-title {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .gallery-text {
-      color: var(--text-muted);
-      font-size: 0.82rem;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: var(--blue-dark);
-      color: #fff;
-      text-align: center;
-      padding: 16px 12px 22px;
-      font-size: 0.8rem;
-    }
-
-    footer strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    footer .legal {
-      max-width: 780px;
-      margin: 0 auto;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 14px;
-      }
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        padding-bottom: 42px;
-      }
-      .search-panel {
-        margin-top: -10px;
-      }
-      .bulletin {
-        grid-template-columns: auto minmax(0, 1fr);
-      }
-      .bulletin-actions {
-        grid-column: 1 / -1;
-        text-align: left;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-    }
-  </style>
 </head>
+
 <body>
-  <!-- ÜST MENÜ -->
-  <header>
-    <div class="brand">ANTALYA TOWER</div>
-    <nav>
-      <a href="/" class="active">Ana Sayfa</a>
-      <a href="/safety">Safety</a>
-      <a href="/training">Eğitim</a>
-      <a href="/about">Hakkında</a>
-    </nav>
-  </header>
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="images/preloader.gif" alt="preloader">
+  </div>
+  <!-- preloader end -->
 
-  <!-- HERO BÖLÜMÜ -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <h1>Antalya Tower<br>Training &amp; Safety Portal</h1>
-        <p class="sub">Meydan Kontrol birimi için eğitim ve emniyet dokümanları, safety bültenleri ve eğitim materyalleri.</p>
-        <div class="hero-buttons">
-          <a href="/safety" class="btn-primary">Safety Bültenleri</a>
-          <a href="/training" class="btn-outline-light">Eğitim Materyalleri</a>
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="tel:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://facebook.com/themefisher/"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://github.com/themefisher"><i class="ti-github"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/themefisher/"><i class="ti-instagram"></i></a></li>
+          </ul>
         </div>
-        <div class="hero-tagline">
-          Bu portal, operasyonel karar vermek için değil; eğitim ve farkındalık amacıyla hazırlanmıştır.
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">notice</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">research</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">SCHOLARSHIP</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#loginModal" data-toggle="modal" data-target="#loginModal">login</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#signupModal" data-toggle="modal" data-target="#signupModal">register</a></li>
+          </ul>
         </div>
-      </div>
-      <div class="hero-visual">
-        <!-- Kule fotoğrafı için overlay -->
-        <div class="tower-overlay"></div>
       </div>
     </div>
-  </section>
+  </div>
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <main>
-
-    <!-- ARAMA PANELİ -->
-    <section class="search-panel" aria-labelledby="search-title">
-      <h2 id="search-title">Dokümanlarda Ara</h2>
-      <p>
-        Safety bültenleri, eğitim sunumları ve notlar içinde arama yapın.
-        Şimdilik başlık ve kısa özetler üzerinde arama yapılmaktadır; ileride PDF içerikleri de eklenecektir.
-      </p>
-      <form id="site-search-form" class="search-row">
-        <input type="search" id="site-search-input"
-               placeholder="Örneğin: phraseology, runway incursion, ROT..."
-               aria-label="Portal içi arama" />
-        <button type="submit">Ara</button>
-      </form>
-      <div id="search-results" class="search-results" aria-live="polite"></div>
-    </section>
-
-    <!-- ÜST KARTLAR -->
-    <section class="cards">
-      <div class="card">
-        <div class="card-title">Safety Bulletin</div>
-        <div class="card-desc">Güncel emniyet bültenleri ve özetleri.</div>
-        <a href="/safety" class="card-btn">Detay</a>
-      </div>
-      <div class="card">
-        <div class="card-title">Eğitim Materyali</div>
-        <div class="card-desc">Ders notları, sunumlar ve örnek senaryolar.</div>
-        <a href="/training" class="card-btn">Detay</a>
-      </div>
-      <div class="card">
-        <div class="card-title">Duyurular</div>
-        <div class="card-desc">Güncel eğitim ve safety duyuruları.</div>
-        <a href="/announcements" class="card-btn">Detay</a>
-      </div>
-    </section>
-
-    <!-- GÜNCEL SAFETY BÜLTENLER (FOTO İLE) -->
-    <section>
-      <h2 class="section-title">Güncel Safety Bültenler</h2>
-
-      <div class="bulletin">
-        <img src="assets/sb-2026-1.jpg" alt="SB 2026/1 görseli" class="bulletin-thumb" />
-        <div class="bulletin-text">
-          <div class="bulletin-title">SB 2026/1 – Clear, Calm, In Control</div>
-          <div class="bulletin-meta">18 Ocak 2026 • ATCO–Pilot iletişim üslubu</div>
-          <p>Kule–pilot haberleşmesinde net, sakin ve standart fraseoloji kullanımına yönelik farkındalık notları.</p>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item @@about">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item @@courses">
+              <a class="nav-link" href="courses.html">COURSES</a>
+            </li>
+            <li class="nav-item @@events">
+              <a class="nav-link" href="events.html">EVENTS</a>
+            </li>
+            <li class="nav-item @@blog">
+              <a class="nav-link" href="blog.html">BLOG</a>
+            </li>
+            <li class="nav-item dropdown view">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="teacher.html">Teacher</a></li>
+                <li><a class="dropdown-item" href="teacher-single.html">Teacher Single</a></li>
+                <li><a class="dropdown-item" href="notice.html">Notice</a></li>
+                <li><a class="dropdown-item" href="notice-single.html">Notice Details</a></li>
+                <li><a class="dropdown-item" href="research.html">Research</a></li>
+                <li><a class="dropdown-item" href="scholarship.html">Scholarship</a></li>
+                <li><a class="dropdown-item" href="course-single.html">Course Details</a></li>
+                <li><a class="dropdown-item" href="event-single.html">Event Details</a></li>
+                <li><a class="dropdown-item" href="blog-single.html">Blog Details</a></li>
+                
+                <li class="dropdown-item dropdown dropleft">
+                  <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sub Menu
+                  </a>
+                  <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
+                    <li><a class="dropdown-item" href="#!">Sub Menu 01</a></li>
+                    <li><a class="dropdown-item" href="#!">Sub Menu 02</a></li>
+                    <li><a class="dropdown-item" href="#!">Sub Menu 03</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item @@contact">
+              <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+          </ul>
         </div>
-        <div class="bulletin-actions">
-          <a href="/safety/sb-2026-01" class="btn-outline">Detay</a>
-          <a href="#" class="btn-canva">Canva Posteri Gör</a>
-        </div>
-      </div>
-
-      <div class="bulletin">
-        <img src="assets/sb-2025-5.jpg" alt="SB 2025/5 görseli" class="bulletin-thumb" />
-        <div class="bulletin-text">
-          <div class="bulletin-title">SB 2025/5 – Runway Incursion Önleme</div>
-          <div class="bulletin-meta">10 Kasım 2025 • Pist ihlallerine yönelik önlemler</div>
-          <p>Taksi talimatı, readback ve pozisyon raporlamasında pist ihlallerini azaltmaya yönelik örnekler ve hatırlatmalar.</p>
-        </div>
-        <div class="bulletin-actions">
-          <a href="/safety/sb-2025-05" class="btn-outline">Detay</a>
-          <a href="#" class="btn-canva">Canva Posteri Gör</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SON EĞİTİM MATERYALLERİ -->
-    <section>
-      <h2 class="section-title">Son Eğitim Materyalleri</h2>
-      <div class="training-list">
-        <details>
-          <summary>Meydan Kontrol Fraseoloji Checklist</summary>
-          <p>Standart ICAO fraseolojisine yönelik kontrol listesi ve örnek R/T cümleleri.</p>
-        </details>
-        <details>
-          <summary>Runway Occupancy Time – Örnek Senaryolar</summary>
-          <p>ROT optimizasyonu, line-up ve vacate senaryoları ile ilgili eğitim materyalleri.</p>
-        </details>
-        <details>
-          <summary>ATCO–Pilot İletişim Üslubu Örnekleri</summary>
-          <p>Yanlış / doğru üslup karşılaştırmaları, meydan kontrol için örnek diyaloglar.</p>
-        </details>
-      </div>
-      <div class="muted-note">
-        Ayrıntılı eğitim materyalleri ve PDF'ler, Eğitim bölümünde listelenir.
-      </div>
-    </section>
-
-    <!-- EĞİTİMDEN KARELER (FOTO GALERİ) -->
-    <section>
-      <h2 class="section-title">Eğitimden Kareler</h2>
-      <div class="gallery">
-        <div class="gallery-card">
-          <img src="assets/training-01.jpg" alt="Simülatör seansı" />
-          <div class="gallery-body">
-            <div class="gallery-title">Simülatör Çalışması</div>
-            <div class="gallery-text">Yoğun trafik senaryosunda phraseology ve takım çalışması.</div>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/training-02.jpg" alt="Classroom oturumu" />
-          <div class="gallery-body">
-            <div class="gallery-title">Classroom Oturumu</div>
-            <div class="gallery-text">Runway incursion vakaları üzerinden grup tartışması.</div>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/training-03.jpg" alt="OJT süreci" />
-          <div class="gallery-body">
-            <div class="gallery-title">OJT Değerlendirmesi</div>
-            <div class="gallery-text">Pozisyon formları ve geri bildirim toplantısından bir kare.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <strong>Antalya Tower Eğitim Birimi</strong>
-    <div class="legal">
-      Bu portal, Antalya Meydan Kontrol birimi için eğitim ve emniyet farkındalığı amaçlıdır;
-      resmî talimat, prosedür veya kurum görüşü yerine geçmez. Bu sitedeki yayınlar tek başına
-      operasyonel karar veya savunma gerekçesi olarak kullanılamaz.
-      <br><br>
-      Portal içeriği Teoman Köse tarafından hazırlanmaktadır ve yönetilmektedir.
+      </nav>
     </div>
-  </footer>
-
-  <!-- BASİT İÇERİK ARAMA -->
-  <script>
-    // Şimdilik başlık + kısa açıklama üzerine çalışan basit arama.
-    const documents = [
-      {
-        type: "Safety Bulletin",
-        title: "SB 2026/1 – Clear, Calm, In Control",
-        url: "/safety/sb-2026-01",
-        tags: "sb2026 üslup iletişim r/t phraseology",
-        summary: "Kule–pilot haberleşmesinde net, sakin ve standart fraseoloji kullanımı."
-      },
-      {
-        type: "Safety Bulletin",
-        title: "SB 2025/5 – Runway Incursion Önleme",
-        url: "/safety/sb-2025-05",
-        tags: "sb2025 runway incursion pist ihlali taksi talimatı readback",
-        summary: "Pist ihlallerini azaltmaya yönelik örnekler ve hatırlatmalar."
-      },
-      {
-        type: "Eğitim Materyali",
-        title: "Meydan Kontrol Fraseoloji Checklist",
-        url: "/training/fraseoloji-checklist",
-        tags: "phraseology checklist meydan kontrol fraseoloji",
-        summary: "Standart ICAO fraseolojisine yönelik kontrol listesi."
-      },
-      {
-        type: "Eğitim Materyali",
-        title: "Runway Occupancy Time – Örnek Senaryolar",
-        url: "/training/rot-ornek-senaryolar",
-        tags: "runway occupancy time rot line-up vacate hiro",
-        summary: "ROT optimizasyonu ve senaryo örnekleri."
-      },
-      {
-        type: "Eğitim Materyali",
-        title: "ATCO–Pilot İletişim Üslubu Örnekleri",
-        url: "/training/atco-pilot-uslup-ornekleri",
-        tags: "üslup iletişim calm clear unambiguous",
-        summary: "Yanlış / doğru üslup karşılaştırmaları."
-      }
-    ];
-
-    const form = document.getElementById("site-search-form");
-    const input = document.getElementById("site-search-input");
-    const resultsEl = document.getElementById("search-results");
-
-    function renderResults(items, query) {
-      if (!query) {
-        resultsEl.innerHTML = "";
-        return;
-      }
-      if (!items.length) {
-        resultsEl.innerHTML = "<div>Sonuç bulunamadı.</div>";
-        return;
-      }
-      resultsEl.innerHTML = items.map(item => `
-        <div class="search-result-item">
-          <div class="search-result-title">${item.title}</div>
-          <div class="search-result-meta">${item.type}</div>
-          <div>${item.summary}</div>
-          <div class="search-result-link"><a href="${item.url}">Dokümana git</a></div>
+  </div>
+</header>
+<!-- /header -->
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form action="#" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      `).join("");
-    }
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-    function handleSearch(event) {
-      if (event) event.preventDefault();
-      const q = input.value.trim().toLowerCase();
-      if (!q) {
-        renderResults([], "");
-        return;
-      }
-      const matches = documents.filter(doc => {
-        const haystack = (doc.title + " " + doc.summary + " " + doc.tags).toLowerCase();
-        return haystack.includes(q);
-      });
-      renderResults(matches, q);
-    }
+<!-- hero slider -->
+<section class="hero-section overlay bg-cover" data-background="images/banner/banner-1.jpg">
+  <div class="container">
+    <div class="hero-slider">
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Your bright future is our mission</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer</p>
+            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
+          </div>
+        </div>
+      </div>
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Your bright future is our mission</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer</p>
+            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
+          </div>
+        </div>
+      </div>
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-white" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Your bright future is our mission</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer</p>
+            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /hero slider -->
 
-    form.addEventListener("submit", handleSearch);
-    input.addEventListener("input", function () {
-      handleSearch();
-    });
-  </script>
+<!-- banner-feature -->
+<section class="bg-gray overflow-md-hidden">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-xl-4 col-lg-5 align-self-end">
+        <img class="img-fluid w-100" src="images/banner/banner-feature.png" alt="banner-feature">
+      </div>
+      <div class="col-xl-8 col-lg-7">
+        <div class="row feature-blocks bg-gray justify-content-between">
+          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+            <i class="ti-book mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Scholorship News</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+              et dolore magna aliqua. Ut enim ad</p>
+          </div>
+          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+            <i class="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Notice Board</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+              et dolore magna aliqua. Ut enim ad</p>
+          </div>
+          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+            <i class="ti-agenda mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Achievements</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+              et dolore magna aliqua. Ut enim ad</p>
+          </div>
+          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+            <i class="ti-write mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Admission Now</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+              et dolore magna aliqua. Ut enim ad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /banner-feature -->
+
+<!-- about us -->
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-2 order-md-1">
+        <h2 class="section-title">About Educenter</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </p>
+        <p>cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+        <a href="about.html" class="btn btn-outline-primary">Learn more</a>
+      </div>
+      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+        <img class="img-fluid w-100" src="images/about/about-us.jpg" alt="about image">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /about us -->
+
+<!-- courses -->
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex align-items-center section-title justify-content-between">
+          <h2 class="mb-0 text-nowrap mr-3">Our Course</h2>
+          <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+          <div>
+            <a href="courses.html" class="btn btn-sm btn-outline-primary ml-sm-3 d-none d-sm-block">see all</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- course list -->
+<div class="row justify-content-center">
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+      <div class="card-body">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+          <li class="list-inline-item"><a class="text-color" href="course-single.html">Humanities</a></li>
+        </ul>
+        <a href="course-single.html">
+          <h4 class="card-title">Photography</h4>
+        </a>
+        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna.</p>
+        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/courses/course-2.jpg" alt="course thumb">
+      <div class="card-body">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+          <li class="list-inline-item"><a class="text-color" href="course-single.html">Humanities</a></li>
+        </ul>
+        <a href="course-single.html">
+          <h4 class="card-title">Programming</h4>
+        </a>
+        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna.</p>
+        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
+      <div class="card-body">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+          <li class="list-inline-item"><a class="text-color" href="course-single.html">Humanities</a></li>
+        </ul>
+        <a href="course-single.html">
+          <h4 class="card-title">Lifestyle Archives</h4>
+        </a>
+        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna.</p>
+        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/courses/course-4.jpg" alt="course thumb">
+      <div class="card-body">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+          <li class="list-inline-item"><a class="text-color" href="course-single.html">Humanities</a></li>
+        </ul>
+        <a href="course-single.html">
+          <h4 class="card-title">Complete Freelancing</h4>
+        </a>
+        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna.</p>
+        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/courses/course-5.jpg" alt="course thumb">
+      <div class="card-body">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+          <li class="list-inline-item"><a class="text-color" href="course-single.html">Humanities</a></li>
+        </ul>
+        <a href="course-single.html">
+          <h4 class="card-title">Branding Design</h4>
+        </a>
+        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna.</p>
+        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/courses/course-6.jpg" alt="course thumb">
+      <div class="card-body">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+          <li class="list-inline-item"><a class="text-color" href="course-single.html">Humanities</a></li>
+        </ul>
+        <a href="course-single.html">
+          <h4 class="card-title">Art Design</h4>
+        </a>
+        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna.</p>
+        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /course list -->
+    <!-- mobile see all button -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="courses.html" class="btn btn-sm btn-outline-primary d-sm-none d-inline-block">sell all</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /courses -->
+
+<!-- cta -->
+<section class="section bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h6 class="text-white font-secondary mb-0">Click to Join the Advance Workshop</h6>
+        <h2 class="section-title text-white">Training In Advannce Networking</h2>
+        <a href="contact.html" class="btn btn-light">join now</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /cta -->
+
+<!-- success story -->
+<section class="section bg-cover" data-background="images/backgrounds/success-story.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-4 position-relative success-video">
+        <a class="play-btn venobox" href="https://youtu.be/nA1Aqp0sPQo" data-vbtype="video">
+          <i class="ti-control-play"></i>
+        </a>
+      </div>
+      <div class="col-lg-6 col-sm-8">
+        <div class="bg-white p-5">
+          <h2 class="section-title">Success Stories</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /success story -->
+
+<!-- events -->
+<section class="section bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex align-items-center section-title justify-content-between">
+          <h2 class="mb-0 text-nowrap mr-3">Upcoming Events</h2>
+          <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+          <div>
+            <a href="events.html" class="btn btn-sm btn-outline-primary ml-sm-3 d-none d-sm-block">see all</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+  <!-- event -->
+  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card border-0 rounded-0 hover-shadow">
+      <div class="card-img position-relative">
+        <img class="card-img-top rounded-0" src="images/events/event-1.jpg" alt="event thumb">
+        <div class="card-date"><span>18</span><br>December</div>
+      </div>
+      <div class="card-body">
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+        <a href="event-single.html"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+      </div>
+    </div>
+  </div>
+  <!-- event -->
+  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card border-0 rounded-0 hover-shadow">
+      <div class="card-img position-relative">
+        <img class="card-img-top rounded-0" src="images/events/event-2.jpg" alt="event thumb">
+        <div class="card-date"><span>21</span><br>December</div>
+      </div>
+      <div class="card-body">
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+        <a href="event-single.html"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+      </div>
+    </div>
+  </div>
+  <!-- event -->
+  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card border-0 rounded-0 hover-shadow">
+      <div class="card-img position-relative">
+        <img class="card-img-top rounded-0" src="images/events/event-3.jpg" alt="event thumb">
+        <div class="card-date"><span>23</span><br>December</div>
+      </div>
+      <div class="card-body">
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+        <a href="event-single.html"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- mobile see all button -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="course.html" class="btn btn-sm btn-outline-primary d-sm-none d-inline-block">sell all</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /events -->
+
+<!-- teachers -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h2 class="section-title">Our Teachers</h2>
+      </div>
+      <!-- teacher -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+          <div class="card-body">
+            <a href="teacher-single.html">
+              <h4 class="card-title">Jacke Masito</h4>
+            </a>
+            <p>Teacher</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a class="text-color" href="https://facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://github.com/themefisher"><i class="ti-google"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://instagram.com/themefisher/"><i class="ti-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- teacher -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
+          <div class="card-body">
+            <a href="teacher-single.html">
+              <h4 class="card-title">Clark Malik</h4>
+            </a>
+            <p>Teacher</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a class="text-color" href="https://facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://github.com/themefisher"><i class="ti-google"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://instagram.com/themefisher/"><i class="ti-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- teacher -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
+          <div class="card-body">
+            <a href="teacher-single.html">
+              <h4 class="card-title">John Doe</h4>
+            </a>
+            <p>Teacher</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a class="text-color" href="https://facebook.com/themefisher"><i class="ti-facebook"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://twitter.com/themefisher"><i class="ti-twitter-alt"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://github.com/themefisher"><i class="ti-google"></i></a></li>
+              <li class="list-inline-item"><a class="text-color" href="https://instagram.com/themefisher/"><i class="ti-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /teachers -->
+
+<!-- blog -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">Latest News</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+  <!-- blog post -->
+  <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Post thumb">
+      <div class="card-body">
+        <!-- post meta -->
+        <ul class="list-inline mb-3">
+          <!-- post date -->
+          <li class="list-inline-item mr-3 ml-0">August 28, 2018</li>
+          <!-- author -->
+          <li class="list-inline-item mr-3 ml-0">By Somrat Sorkar</li>
+        </ul>
+        <a href="blog-single.html">
+          <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+        </a>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+        <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+      </div>
+    </div>
+  </article>
+  <!-- blog post -->
+  <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Post thumb">
+      <div class="card-body">
+        <!-- post meta -->
+        <ul class="list-inline mb-3">
+          <!-- post date -->
+          <li class="list-inline-item mr-3 ml-0">August 13, 2018</li>
+          <!-- author -->
+          <li class="list-inline-item mr-3 ml-0">By Jonathon Drew</li>
+        </ul>
+        <a href="blog-single.html">
+          <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+        </a>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+        <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+      </div>
+    </div>
+  </article>
+  <!-- blog post -->
+  <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Post thumb">
+      <div class="card-body">
+        <!-- post meta -->
+        <ul class="list-inline mb-3">
+          <!-- post date -->
+          <li class="list-inline-item mr-3 ml-0">August 24, 2018</li>
+          <!-- author -->
+          <li class="list-inline-item mr-3 ml-0">By Alex Pitt</li>
+        </ul>
+        <a href="blog-single.html">
+          <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+        </a>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+        <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+      </div>
+    </div>
+  </article>
+</div>
+  </div>
+</section>
+<!-- /blog -->
+
+<!-- footer -->
+<footer>
+  <!-- newsletter -->
+  <div class="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
+          <h3 class="text-white">Subscribe Now</h3>
+          <form action="#">
+            <div class="input-wrapper">
+              <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter Your Email...">
+              <button type="submit" value="send" class="btn btn-primary">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer content -->
+  <div class="footer bg-footer section border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          <!-- logo -->
+          <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="images/logo.png" alt="logo"></a>
+          <ul class="list-unstyled">
+            <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
+            <li class="mb-2">+1 (2) 345 6789</li>
+            <li class="mb-2">+1 (2) 345 6789</li>
+            <li class="mb-2">contact@yourdomain.com</li>
+          </ul>
+        </div>
+        <!-- company -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">COMPANY</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
+            <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
+            <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
+            <li class="mb-3"><a class="text-color" href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <!-- links -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">LINKS</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
+            <li class="mb-3"><a class="text-color" href="events.html">Events</a></li>
+            <li class="mb-3"><a class="text-color" href="notice.html">Notice</a></li>
+            <li class="mb-3"><a class="text-color" href="scholarship.html">Scholarship</a></li>
+          </ul>
+        </div>
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">SUPPORT</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="https://themefisher.com/blog">Forums</a></li>
+            <li class="mb-3"><a class="text-color" href="https://docs.themefisher.com/">Documentation</a></li>
+            <li class="mb-3"><a class="text-color" href="#!">Language</a></li>
+            <li class="mb-3"><a class="text-color" href="#!">Release Status</a></li>
+          </ul>
+        </div>
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">RECOMMEND</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">WordPress</a></li>
+            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">LearnPress</a></li>
+            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">WooCommerce</a></li>
+            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">bbPress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- copyright -->
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 text-sm-left text-center">
+          <p class="mb-0">Copyright &copy;
+            <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script> 
+            , designed & developed by <a href="https://themefisher.com/" class="text-muted">Themefisher</a>
+          </p>
+        </div>
+        <div class="col-sm-5 text-sm-right text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://facebook.com/themefisher/"><i class="ti-facebook text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://twitter.com/themefisher"><i class="ti-twitter-alt text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://github.com/themefisher"><i class="ti-github text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://instagram.com/themefisher/"><i class="ti-instagram text-primary"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- jQuery -->
+<script src="plugins/jQuery/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<!-- slick slider -->
+<script src="plugins/slick/slick.min.js"></script>
+<!-- aos -->
+<script src="plugins/aos/aos.js"></script>
+<!-- venobox popup -->
+<script src="plugins/venobox/venobox.min.js"></script>
+<!-- filter -->
+<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<!-- Main Script -->
+<script src="js/script.js"></script>
+
 </body>
 </html>
