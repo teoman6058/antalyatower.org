@@ -24,6 +24,22 @@
   <!-- theme meta -->
   <meta name="theme-name" content="educenter" />
 
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Antalya Tower Eğitim &amp; Safety Portalı">
+  <meta property="og:description" content="Meydan kontrolörleri için tek noktadan erişilen eğitim, doküman ve Safety Bulletin platformu.">
+  <meta property="og:image" content="/images/banner/banner-1.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Antalya Tower Eğitim &amp; Safety Portalı">
+  <meta name="twitter:description" content="Meydan kontrolörleri için tek noktadan erişilen eğitim, doküman ve Safety Bulletin platformu.">
+  <meta name="twitter:image" content="/images/banner/banner-1.jpg">
+
+  <!-- Skip-link focus styles (minimal, inlined so it works without changing CSS files) -->
+  <style>
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;left:auto;width:auto;height:auto;padding:8px;background:#0056b3;color:#fff;z-index:1000}
+  </style>
+
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -41,13 +57,18 @@
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!--Favicon-->
+  <!--Favicon & touch icons-->
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">İçeriğe atla</a>
+
   <!-- preloader start -->
   <div class="preloader">
     <img src="images/preloader.gif" alt="preloader">
@@ -74,7 +95,7 @@
   <!-- navbar -->
   <div class="navigation w-100">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0" role="navigation" aria-label="Ana navigasyon">
         <a class="navbar-brand" href="index.html">
           <img src="images/logo.png" alt="Antalya Tower">
         </a>
@@ -111,6 +132,7 @@
 </header>
 <!-- /header -->
 
+<main id="main-content">
 <!-- ==================================================
      HERO – ana başlık
 ================================================== -->
@@ -162,7 +184,7 @@
   <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-xl-4 col-lg-5 align-self-end">
-        <img class="img-fluid w-100" src="images/banner/banner-feature.png" alt="Antalya Tower">
+        <img class="img-fluid w-100" src="images/banner/banner-feature.png" alt="Antalya Tower" loading="lazy">
       </div>
       <div class="col-xl-8 col-lg-7">
         <div class="row feature-blocks bg-gray justify-content-between">
@@ -266,7 +288,7 @@
       <!-- örnek post 1 -->
       <article class="col-lg-4 col-sm-6 mb-4">
         <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Safety Bulletin">
+          <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Safety Bulletin" loading="lazy">
           <div class="card-body">
             <ul class="list-inline mb-3">
               <li class="list-inline-item mr-3 ml-0">Ocak 2026</li>
@@ -283,7 +305,7 @@
       <!-- örnek post 2 -->
       <article class="col-lg-4 col-sm-6 mb-4">
         <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Safety Bulletin">
+          <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Safety Bulletin" loading="lazy">
           <div class="card-body">
             <ul class="list-inline mb-3">
               <li class="list-inline-item mr-3 ml-0">Aralık 2025</li>
@@ -300,7 +322,7 @@
       <!-- örnek post 3 -->
       <article class="col-lg-4 col-sm-6 mb-4">
         <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Safety Bulletin">
+          <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Safety Bulletin" loading="lazy">
           <div class="card-body">
             <ul class="list-inline mb-3">
               <li class="list-inline-item mr-3 ml-0">Kasım 2025</li>
@@ -317,6 +339,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ==================================================
      FOOTER
@@ -374,6 +398,9 @@
             </script>
             &nbsp;Antalya Tower Meydan Kontrol Eğitim Ünitesi
           </p>
+          <noscript>
+            <p class="mb-0">&copy; 2026 Antalya Tower Meydan Kontrol Eğitim Ünitesi</p>
+          </noscript>
         </div>
       </div>
     </div>
@@ -384,23 +411,21 @@
      SCRIPTS
 ================================================== -->
 <!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="plugins/jQuery/jquery.min.js" defer></script>
 <!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js" defer></script>
 <!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
+<script src="plugins/slick/slick.min.js" defer></script>
 <!-- aos -->
-<script src="plugins/aos/aos.js"></script>
+<script src="plugins/aos/aos.js" defer></script>
 <!-- venobox popup -->
-<script src="plugins/venobox/venobox.min.js"></script>
+<script src="plugins/venobox/venobox.min.js" defer></script>
 <!-- filter -->
-<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-<!-- google map (şimdilik kullanılmıyor ama kalsın) -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
-<script src="plugins/google-map/gmap.js"></script>
+<script src="plugins/filterizr/jquery.filterizr.min.js" defer></script>
+<!-- NOTE: Google Maps removed to avoid exposing API key in source. If you need maps, configure the key with referrer restrictions or load server-side. -->
 
 <!-- Main Script -->
-<script src="js/script.js"></script>
+<script src="js/script.js" defer></script>
 
 </body>
 </html>
