@@ -1,161 +1,164 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Antalya Tower – Eğitim & Safety Portalı</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antalya Tower – Eğitim & Safety Portalı</title>
 
-<style>
-:root{
-  --primary:#2f6f6d;
-  --accent:#4fb6b1;
-  --bg:#f5f7f8;
-  --card:#ffffff;
-  --text:#1f2d2c;
-  --muted:#6f7f7e;
-}
+  <style>
+    :root {
+      --primary: #2f7f7a;
+      --text-dark: #1f2d2b;
+      --text-muted: #6b7c7a;
+      --card-bg: #ffffff;
+      --page-bg: #f4f7f7;
+    }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--page-bg);
+      color: var(--text-dark);
+    }
 
-header{
-  padding:32px 20px 24px;
-}
+    header {
+      padding: 32px 20px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-.logo{
-  height:44px;
-  margin-bottom:18px;
-}
+    .logo {
+      max-width: 140px;
+      margin-bottom: 16px;
+    }
 
-h1{
-  font-size:28px;
-  line-height:1.25;
-  font-weight:700;
-  margin-bottom:10px;
-}
+    h1 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
 
-.subtitle{
-  color:var(--muted);
-  font-size:15px;
-}
+    .subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
 
-.divider{
-  width:70px;
-  height:6px;
-  background:var(--accent);
-  border-radius:4px;
-  margin-top:16px;
-}
+    .divider {
+      width: 70px;
+      height: 6px;
+      background: #4fb7b2;
+      border-radius: 4px;
+    }
 
-main{
-  padding:20px;
-  min-height:100vh;
-  padding-bottom:140px;
-}
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10px 16px 60px;
+    }
 
-.card{
-  background:var(--card);
-  border-radius:18px;
-  padding:22px 20px;
-  margin-bottom:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-}
+    .card {
+      background: var(--card-bg);
+      border-radius: 22px;
+      padding: 22px 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
 
-.card h2{
-  color:var(--primary);
-  font-size:20px;
-  font-weight:700;
-  letter-spacing:.2px;
-  margin-bottom:10px;
-}
+    .card h2 {
+      font-size: 22px;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin-bottom: 10px;
+    }
 
-.card p{
-  font-size:15px;
-  line-height:1.55;
-  color:#4a5a59;
-}
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
 
-.scroll-hint{
-  text-align:center;
-  color:#7f8f8e;
-  font-size:14px;
-  margin:28px 0 10px;
-}
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #8a9a98;
+      padding: 30px 10px 40px;
+    }
 
-footer{
-  height:80px;
-}
-</style>
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .logo {
+        max-width: 120px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <!-- LOGO -->
+    <img src="images/logo.png" alt="Antalya Tower Logo" class="logo" />
 
-<header>
-  <!-- LOGO -->
-  <img src="public/images/logo.png" alt="LTAI Logo" class="logo">
+    <h1>Antalya Tower – Eğitim &amp; Safety Portalı</h1>
+    <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
+    <div class="divider"></div>
+  </header>
 
-  <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
-  <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
-  <div class="divider"></div>
-</header>
+  <main>
+    <section class="card">
+      <h2>Eğitim</h2>
+      <p>
+        ATCO ve OJTI personeline yönelik eğitim dokümanları, awareness
+        içerikleri ve senaryo bazlı çalışmalar.
+      </p>
+    </section>
 
-<main>
+    <section class="card">
+      <h2>OJTI</h2>
+      <p>
+        OJTI süreçlerine yönelik rehber dokümanlar, eğitim yaklaşımları
+        ve uygulama destek içerikleri.
+      </p>
+    </section>
 
-  <section class="card">
-    <h2>Eğitim</h2>
-    <p>
-      ATCO ve OJTI personeline yönelik eğitim dokümanları,
-      awareness içerikleri ve senaryo bazlı çalışmalar.
-    </p>
-  </section>
+    <section class="card">
+      <h2>Safety</h2>
+      <p>
+        Emniyet farkındalığına yönelik safety bulletin’ler, olay
+        analizleri ve öğrenilen dersler.
+      </p>
+    </section>
 
-  <section class="card">
-    <h2>OJTI</h2>
-    <p>
-      OJTI süreçlerine yönelik rehber dokümanlar,
-      eğitim yaklaşımları ve uygulama destek içerikleri.
-    </p>
-  </section>
+    <section class="card">
+      <h2>Doküman</h2>
+      <p>
+        Referans dokümanlar, prosedürler ve ileride eklenecek
+        PDF / LMS içerikleri.
+      </p>
+    </section>
 
-  <section class="card">
-    <h2>Safety</h2>
-    <p>
-      Emniyet farkındalığına yönelik safety bulletin’ler,
-      olay analizleri ve öğrenilen dersler.
-    </p>
-  </section>
+    <section class="card">
+      <h2>Hakkında</h2>
+      <p>
+        Antalya Tower Eğitim &amp; Safety Portalı, meydan kontrol
+        personelinin eğitim ve emniyet farkındalığını desteklemek
+        amacıyla hazırlanmıştır.
+      </p>
+    </section>
+  </main>
 
-  <div class="scroll-hint">↓ Diğer içerikler için kaydırın</div>
-
-  <section class="card">
-    <h2>Doküman</h2>
-    <p>
-      Referans dokümanlar, prosedürler ve ileride eklenecek
-      PDF / LMS içerikleri.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>Hakkında</h2>
-    <p>
-      Antalya Tower Eğitim & Safety Portalı, meydan kontrol
-      personelinin eğitim ve emniyet farkındalığını desteklemek
-      amacıyla hazırlanmıştır.
-    </p>
-  </section>
-
-</main>
-
-<footer></footer>
-
+  <footer>
+    © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır
+  </footer>
 </body>
 </html>
