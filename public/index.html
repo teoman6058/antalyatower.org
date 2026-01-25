@@ -11,7 +11,6 @@
   --text:#1f2f2f;
 }
 
-/* RESET */
 *{
   margin:0;
   padding:0;
@@ -22,38 +21,44 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
   color:var(--text);
   background:
-    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
+    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
     url("images/backgrounds/sky.jpg") center/cover fixed no-repeat;
 }
 
 /* HEADER */
 header{
   position:relative;
-  min-height:60vh;
+  min-height:65vh;
   padding:72px 20px 48px;
-  overflow:hidden;
   display:flex;
   align-items:flex-end;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      rgba(255,255,255,.75),
+      rgba(255,255,255,.85)
+    ),
+    url("images/backgrounds/sky.jpg") center/cover no-repeat;
 }
 
-/* LOGO – FULL BACKGROUND */
+/* LOGO – TAM ALAN, HARFLER SIĞACAK */
 .header-logo{
   position:absolute;
   inset:0;
   background:url("images/logo.png") center/contain no-repeat;
-  opacity:0.08;              /* 👈 şeffaflık burada */
+  opacity:0.18;              /* 👈 harfler okunur ama baskın */
   z-index:1;
 }
 
-/* HEADER TEXT */
+/* METİN */
 .header-content{
   position:relative;
   z-index:2;
-  max-width:900px;
+  max-width:960px;
 }
 
 h1{
-  font-size:clamp(28px,5vw,42px);
+  font-size:clamp(30px,5vw,44px);
   font-weight:700;
   line-height:1.25;
   margin-bottom:12px;
@@ -100,10 +105,9 @@ main{
   opacity:.9;
 }
 
-/* MOBILE */
 @media(max-width:600px){
   header{
-    min-height:50vh;
+    min-height:55vh;
   }
 }
 </style>
@@ -112,10 +116,9 @@ main{
 <body>
 
 <header>
-  <!-- LOGO BACKGROUND -->
+  <!-- DEV LOGO BACKGROUND -->
   <div class="header-logo"></div>
 
-  <!-- TEXT -->
   <div class="header-content">
     <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
     <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
