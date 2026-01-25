@@ -1,148 +1,129 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antalya Tower – Eğitim & Safety Portalı</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antalya Tower – Eğitim & Safety Portalı</title>
 
-  <style>
-    :root {
-      --primary: #1f6f6f;
-      --accent: #4fb3b3;
-      --bg: #f2f4f5;
-      --card-bg: #ffffff;
-      --text-dark: #1e2a2a;
-      --text-muted: #5f6f73;
-    }
+<style>
+:root{
+  --accent:#4fb3b3;
+  --text:#1f2f2f;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
+    url("images/backgrounds/sky.jpg") center/cover fixed no-repeat;
+}
 
-    /* ===== HEADER ===== */
-    header {
-      padding: 28px 16px 24px;
-    }
+/* HEADER */
+header{
+  position:relative;
+  min-height:60vh;
+  padding:72px 20px 48px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+}
 
-    .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+/* LOGO – FULL BACKGROUND */
+.header-logo{
+  position:absolute;
+  inset:0;
+  background:url("images/logo.png") center/contain no-repeat;
+  opacity:0.08;              /* 👈 şeffaflık burada */
+  z-index:1;
+}
 
-    .logo {
-      width: 90px;
-      height: auto;
-    }
+/* HEADER TEXT */
+.header-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+}
 
-    .hero-text h1 {
-      font-size: 1.7rem;
-      font-weight: 700;
-    }
+h1{
+  font-size:clamp(28px,5vw,42px);
+  font-weight:700;
+  line-height:1.25;
+  margin-bottom:12px;
+}
 
-    .hero-text p {
-      margin-top: 6px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
+.subtitle{
+  font-size:16px;
+  opacity:.75;
+}
 
-    .divider {
-      width: 48px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-      margin-top: 12px;
-    }
+.accent{
+  width:56px;
+  height:6px;
+  background:var(--accent);
+  border-radius:6px;
+  margin-top:18px;
+}
 
-    /* ===== CONTENT ===== */
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 12px 16px 60px;
-      display: grid;
-      gap: 22px;
-    }
+/* MAIN */
+main{
+  padding:32px 16px 80px;
+}
 
-    .card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 22px 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
+.card{
+  max-width:720px;
+  margin:0 auto 22px;
+  padding:26px;
+  background:#fff;
+  border-radius:22px;
+  box-shadow:0 14px 32px rgba(0,0,0,.08);
+}
 
-    .card h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
+.card h2{
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:.3px;
+  color:#2b6b6b;
+  margin-bottom:10px;
+}
 
-    .card p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
+.card p{
+  font-size:15px;
+  line-height:1.55;
+  opacity:.9;
+}
 
-    .scroll-hint {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      padding: 32px 16px 24px;
-    }
-
-    /* ===== MOBILE ===== */
-    @media (max-width: 600px) {
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .logo {
-        width: 72px;
-      }
-
-      .hero-text h1 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:600px){
+  header{
+    min-height:50vh;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="hero">
-    <img src="images/logo.png" alt="LTAI Logo" class="logo">
+  <!-- LOGO BACKGROUND -->
+  <div class="header-logo"></div>
 
-    <div class="hero-text">
-      <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
-      <p>Antalya Meydan Kontrol Eğitim Ünitesi</p>
-      <div class="divider"></div>
-    </div>
+  <!-- TEXT -->
+  <div class="header-content">
+    <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
+    <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
+    <div class="accent"></div>
   </div>
 </header>
 
 <main>
-
   <section class="card">
     <h2>Eğitim</h2>
     <p>
@@ -166,33 +147,7 @@
       öğrenilen dersler.
     </p>
   </section>
-
-  <div class="scroll-hint">↓ Diğer içerikler için kaydırın</div>
-
-  <section class="card">
-    <h2>Doküman</h2>
-    <p>
-      Referans dokümanlar, prosedürler ve ileride eklenecek PDF / LMS içerikleri.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>Hakkında</h2>
-    <p>
-      Bu portal, Antalya Meydan Kontrol Eğitim Ünitesi bünyesinde ATCO ve OJTI
-      personeline yönelik eğitim ve emniyet farkındalığını desteklemek amacıyla
-      oluşturulmuştur.  
-      İçerik koordinasyonu: <strong>Teoman Köse</strong>.
-    </p>
-  </section>
-
 </main>
-
-<footer>
-  © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır  
-  <br>
-  Bu platform operasyonel talimat içermez.
-</footer>
 
 </body>
 </html>
