@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Antalya Tower – Eğitim & Safety Portalı</title>
+
+<style>
+:root {
+  --bg-main: linear-gradient(180deg, #cfeff3 0%, #eaf7f9 100%);
+  --card-bg: rgba(255,255,255,0.95);
+  --text-main: #1f2d3d;
+  --accent: #2fa4ad;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 36px 20px 18px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+.header-divider {
+  width: 80px;
+  height: 3px;
+  margin: 22px auto 10px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+/* ===== MAIN ===== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px 20px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 10px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .header-divider {
+    width: 60px;
+    margin-top: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
+  <p>Antalya Meydan Kontrol Eğitim Ünitesi</p>
+  <div class="header-divider"></div>
+</header>
+
+<main>
+
+  <section class="section-grid">
+
+    <a href="egitim.html" class="card">
+      <h2>Eğitim</h2>
+      <p>
+        ATCO ve OJTI personeline yönelik eğitim içerikleri,
+        awareness materyalleri ve değerlendirme kapsamında
+        kullanılan dokümanlar.
+      </p>
+    </a>
+
+    <a href="safety.html" class="card">
+      <h2>Safety</h2>
+      <p>
+        Safety Bulletin’ler, emniyet farkındalığına yönelik
+        bilgilendirme içerikleri ve lessons learned.
+      </p>
+    </a>
+
+    <a href="dokuman.html" class="card">
+      <h2>Doküman</h2>
+      <p>
+        Referans ve arşiv niteliğindeki dokümanlar.
+        Operasyonel uygulamalarda bağlayıcı değildir.
+      </p>
+    </a>
+
+    <a href="duyurular.html" class="card">
+      <h2>Duyurular</h2>
+      <p>
+        Eğitim ve organizasyon süreçlerine ilişkin
+        bilgilendirmeler.
+      </p>
+    </a>
+
+    <a href="hakkinda.html" class="card">
+      <h2>Hakkında</h2>
+      <p>
+        Portalın amacı, kapsamı ve kullanım çerçevesi.
+      </p>
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  2026 Antalya Meydan Kontrol Eğitim Ünitesi – İç kullanım amaçlıdır.
+</footer>
+
+</body>
+</html>
