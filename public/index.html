@@ -1,173 +1,177 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Antalya Tower – Eğitim & Safety Portalı</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antalya Tower – Eğitim & Safety Portalı</title>
 
-  <style>
-    :root{
-      --primary:#2f6f73;
-      --accent:#4fb3b8;
-      --text-dark:#1f2f30;
-      --card-bg:rgba(255,255,255,0.75);
-    }
+<style>
+:root{
+  --primary:#2f6f73;
+  --accent:#4fb3b8;
+  --text:#1f2f30;
+  --glass:rgba(255,255,255,0.68);
+}
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
+}
 
-    body{
-      background: url("images/Sky.jpg") no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text-dark);
-    }
+body{
+  background:url("images/Sky.jpg") center/cover fixed no-repeat;
+  color:var(--text);
+}
 
-    /* HEADER */
-    header{
-      position: relative;
-      padding: 48px 20px 36px;
-      background: rgba(255,255,255,0.82);
-      overflow: hidden;
-    }
+/* HEADER */
+header{
+  position:relative;
+  padding:64px 20px 48px;
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.88),
+      rgba(255,255,255,0.82)
+    );
+  backdrop-filter: blur(6px);
+  overflow:hidden;
+}
 
-    /* WATERMARK LOGO */
-    header::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: url("images/logo.png") no-repeat center center;
-      background-size: 90% auto;
-      opacity: 0.08;
-      pointer-events:none;
-    }
+/* DEV LOGO WATERMARK */
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/logo.png") center/95% auto no-repeat;
+  opacity:0.12;
+  pointer-events:none;
+}
 
-    .header-inner{
-      position:relative;
-      max-width:1100px;
-      margin:auto;
-    }
+.header-inner{
+  position:relative;
+  max-width:1100px;
+  margin:auto;
+}
 
-    h1{
-      font-size: 32px;
-      font-weight:700;
-      line-height:1.25;
-      margin-bottom:10px;
-    }
+h1{
+  font-size:34px;
+  font-weight:700;
+  line-height:1.25;
+  margin-bottom:12px;
+}
 
-    .subtitle{
-      font-size:16px;
-      color:#4b5f60;
-    }
+.subtitle{
+  font-size:16px;
+  color:#4c6365;
+}
 
-    .accent-line{
-      width:72px;
-      height:6px;
-      background:var(--accent);
-      border-radius:4px;
-      margin-top:16px;
-    }
+.accent{
+  width:80px;
+  height:6px;
+  background:var(--accent);
+  border-radius:6px;
+  margin-top:18px;
+}
 
-    /* MAIN */
-    main{
-      max-width:1100px;
-      margin: 40px auto 60px;
-      padding: 0 16px;
-    }
+/* MAIN */
+main{
+  max-width:1100px;
+  margin:48px auto 64px;
+  padding:0 16px;
+}
 
-    .card{
-      background: var(--card-bg);
-      border-radius:20px;
-      padding:24px;
-      margin-bottom:24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      backdrop-filter: blur(6px);
-    }
+.card{
+  background:var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius:22px;
+  padding:26px;
+  margin-bottom:26px;
+  box-shadow:0 12px 28px rgba(0,0,0,0.10);
+}
 
-    .card h2{
-      color: var(--primary);
-      font-size:22px;
-      font-weight:700;
-      letter-spacing:0.3px;
-      margin-bottom:10px;
-    }
+.card h2{
+  color:var(--primary);
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:10px;
+  letter-spacing:0.3px;
+}
 
-    .card p{
-      color:#4b5f60;
-      line-height:1.6;
-      font-size:15px;
-    }
+.card p{
+  font-size:15px;
+  line-height:1.6;
+  color:#465c5e;
+}
 
-    /* FOOTER */
-    footer{
-      text-align:center;
-      padding:24px 16px;
-      font-size:13px;
-      color:#5f6f70;
-      background: rgba(255,255,255,0.6);
-    }
-  </style>
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:26px 16px;
+  font-size:13px;
+  color:#5f6f70;
+  background:rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="header-inner">
-      <h1>Antalya Tower – Eğitim &amp; Safety Portalı</h1>
-      <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
-      <div class="accent-line"></div>
-    </div>
-  </header>
+<header>
+  <div class="header-inner">
+    <h1>Antalya Tower – Eğitim &amp; Safety Portalı</h1>
+    <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
+    <div class="accent"></div>
+  </div>
+</header>
 
-  <main>
-    <section class="card">
-      <h2>Eğitim</h2>
-      <p>
-        ATCO ve OJTI personeline yönelik eğitim dokümanları,
-        awareness içerikleri ve senaryo bazlı çalışmalar.
-      </p>
-    </section>
+<main>
+  <section class="card">
+    <h2>Eğitim</h2>
+    <p>
+      ATCO ve OJTI personeline yönelik eğitim dokümanları,
+      awareness içerikleri ve senaryo bazlı çalışmalar.
+    </p>
+  </section>
 
-    <section class="card">
-      <h2>OJTI</h2>
-      <p>
-        OJTI süreçlerine yönelik rehber dokümanlar,
-        eğitim yaklaşımları ve uygulama destek içerikleri.
-      </p>
-    </section>
+  <section class="card">
+    <h2>OJTI</h2>
+    <p>
+      OJTI süreçlerine yönelik rehber dokümanlar,
+      eğitim yaklaşımları ve uygulama destek içerikleri.
+    </p>
+  </section>
 
-    <section class="card">
-      <h2>Safety</h2>
-      <p>
-        Emniyet farkındalığına yönelik safety bulletin’ler,
-        olay analizleri ve öğrenilen dersler.
-      </p>
-    </section>
+  <section class="card">
+    <h2>Safety</h2>
+    <p>
+      Emniyet farkındalığına yönelik safety bulletin’ler,
+      olay analizleri ve öğrenilen dersler.
+    </p>
+  </section>
 
-    <section class="card">
-      <h2>Doküman</h2>
-      <p>
-        Referans dokümanlar, prosedürler ve ileride eklenecek
-        PDF / LMS içerikleri.
-      </p>
-    </section>
+  <section class="card">
+    <h2>Doküman</h2>
+    <p>
+      Referans dokümanlar, prosedürler ve ileride eklenecek
+      PDF / LMS içerikleri.
+    </p>
+  </section>
 
-    <section class="card">
-      <h2>Hakkında</h2>
-      <p>
-        Antalya Tower Eğitim &amp; Safety Portalı, meydan kontrol
-        personelinin eğitim ve emniyet farkındalığını desteklemek
-        amacıyla hazırlanmıştır.
-      </p>
-    </section>
-  </main>
+  <section class="card">
+    <h2>Hakkında</h2>
+    <p>
+      Antalya Tower Eğitim &amp; Safety Portalı, meydan kontrol
+      personelinin eğitim ve emniyet farkındalığını desteklemek
+      amacıyla hazırlanmıştır.
+    </p>
+  </section>
+</main>
 
-  <footer>
-    © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır
-  </footer>
+<footer>
+  © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır
+</footer>
 
 </body>
 </html>
