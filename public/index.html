@@ -43,16 +43,10 @@ header{
   overflow:hidden;
 }
 
-/* WATERMARK LOGO */
-header::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url("images/logo.png") center/75% auto no-repeat;
-  opacity:0.05;
-  pointer-events:none;
-}
+/* ❌ WATERMARK KALDIRILDI */
+/* header::after tamamen iptal */
 
+/* HEADER INNER */
 .header-inner{
   position:relative;
   max-width:1100px;
@@ -67,11 +61,14 @@ header::after{
   margin-bottom:24px;
 }
 
+/* LOGO – ARKA PLANSIZ */
 .top-bar img{
   height:56px;
   width:auto;
+  display:block;
 }
 
+/* BAŞLIKLAR */
 h1{
   font-size:32px;
   font-weight:700;
@@ -132,6 +129,7 @@ footer{
   <div class="header-inner">
 
     <div class="top-bar">
+      <!-- LOGO: PNG/SVG ŞEFFAF -->
       <img src="images/logo.png" alt="Antalya Tower Logo">
     </div>
 
