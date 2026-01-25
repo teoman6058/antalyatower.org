@@ -7,168 +7,155 @@
 
 <style>
 :root{
-  --accent:#4fb3b3;
-  --text:#1f2f2f;
+  --primary:#2f6f6d;
+  --accent:#4fb6b1;
+  --bg:#f5f7f8;
+  --card:#ffffff;
+  --text:#1f2d2c;
+  --muted:#6f7f7e;
 }
 
-/* RESET */
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
 }
 
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
   color:var(--text);
-  background:
-    linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.88)),
-    url("images/backgrounds/sky.jpg") center/cover fixed no-repeat;
 }
 
-/* ================= HEADER ================= */
-
-header.hero{
-  position:relative;
-  min-height:65vh;
-  padding:72px 20px 48px;
-  overflow:hidden;
-  display:flex;
-  align-items:flex-end;
+header{
+  padding:32px 20px 24px;
 }
 
-/* 1️⃣ GÖKYÜZÜ – EN ALT */
-.hero-sky{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(rgba(255,255,255,.65),rgba(255,255,255,.8)),
-    url("images/backgrounds/sky.jpg") center/cover no-repeat;
-  z-index:1;
+.logo{
+  height:44px;
+  margin-bottom:18px;
 }
 
-/* 2️⃣ DEV LOGO – TÜM ALANI DOLDURUR */
-.hero-logo{
-  position:absolute;
-  inset:0;
-  background:url("media/hero-logo.svg") center/contain no-repeat;
-  opacity:0.20;            /* 👈 HARFLER NET AMA BOĞMAZ */
-  z-index:2;
-  pointer-events:none;
-}
-
-/* 3️⃣ METİN – HER ZAMAN EN ÜSTTE */
-.hero-content{
-  position:relative;
-  z-index:3;
-  max-width:960px;
-}
-
-.hero-content h1{
-  font-size:clamp(30px,5vw,44px);
-  font-weight:700;
+h1{
+  font-size:28px;
   line-height:1.25;
-  margin-bottom:12px;
-  color:#1f2f2f;
+  font-weight:700;
+  margin-bottom:10px;
 }
 
-.hero-content .subtitle{
-  font-size:16px;
-  opacity:.8;
+.subtitle{
+  color:var(--muted);
+  font-size:15px;
 }
 
-.hero-content .accent{
-  width:56px;
+.divider{
+  width:70px;
   height:6px;
   background:var(--accent);
-  border-radius:6px;
-  margin-top:18px;
+  border-radius:4px;
+  margin-top:16px;
 }
 
-/* ================= MAIN ================= */
-
 main{
-  padding:32px 16px 80px;
+  padding:20px;
+  min-height:100vh;
+  padding-bottom:140px;
 }
 
 .card{
-  max-width:720px;
-  margin:0 auto 22px;
-  padding:26px;
-  background:#ffffff;
-  border-radius:22px;
-  box-shadow:0 14px 32px rgba(0,0,0,.08);
+  background:var(--card);
+  border-radius:18px;
+  padding:22px 20px;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
 .card h2{
+  color:var(--primary);
   font-size:20px;
   font-weight:700;
-  letter-spacing:.3px;
-  color:#2b6b6b;
+  letter-spacing:.2px;
   margin-bottom:10px;
 }
 
 .card p{
   font-size:15px;
   line-height:1.55;
-  opacity:.9;
+  color:#4a5a59;
 }
 
-/* ================= MOBILE ================= */
-@media(max-width:600px){
-  header.hero{
-    min-height:55vh;
-  }
+.scroll-hint{
+  text-align:center;
+  color:#7f8f8e;
+  font-size:14px;
+  margin:28px 0 10px;
+}
 
-  .hero-logo{
-    opacity:0.16; /* mobilde biraz daha sakin */
-  }
+footer{
+  height:80px;
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-  <!-- GÖKYÜZÜ -->
-  <div class="hero-sky"></div>
+<header>
+  <!-- LOGO -->
+  <img src="public/images/logo.png" alt="LTAI Logo" class="logo">
 
-  <!-- DEV LTAI LOGO (CANVA) -->
-  <div class="hero-logo"></div>
-
-  <!-- BAŞLIKLAR -->
-  <div class="hero-content">
-    <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
-    <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
-    <div class="accent"></div>
-  </div>
+  <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
+  <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
+  <div class="divider"></div>
 </header>
 
 <main>
+
   <section class="card">
     <h2>Eğitim</h2>
     <p>
-      ATCO ve OJTI personeline yönelik eğitim dokümanları, awareness içerikleri
-      ve senaryo bazlı çalışmalar.
+      ATCO ve OJTI personeline yönelik eğitim dokümanları,
+      awareness içerikleri ve senaryo bazlı çalışmalar.
     </p>
   </section>
 
   <section class="card">
     <h2>OJTI</h2>
     <p>
-      OJTI süreçlerine yönelik rehber dokümanlar, eğitim yaklaşımları ve
-      uygulama destek içerikleri.
+      OJTI süreçlerine yönelik rehber dokümanlar,
+      eğitim yaklaşımları ve uygulama destek içerikleri.
     </p>
   </section>
 
   <section class="card">
     <h2>Safety</h2>
     <p>
-      Emniyet farkındalığına yönelik safety bulletin’ler, olay analizleri ve
-      öğrenilen dersler.
+      Emniyet farkındalığına yönelik safety bulletin’ler,
+      olay analizleri ve öğrenilen dersler.
     </p>
   </section>
+
+  <div class="scroll-hint">↓ Diğer içerikler için kaydırın</div>
+
+  <section class="card">
+    <h2>Doküman</h2>
+    <p>
+      Referans dokümanlar, prosedürler ve ileride eklenecek
+      PDF / LMS içerikleri.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Hakkında</h2>
+    <p>
+      Antalya Tower Eğitim & Safety Portalı, meydan kontrol
+      personelinin eğitim ve emniyet farkındalığını desteklemek
+      amacıyla hazırlanmıştır.
+    </p>
+  </section>
+
 </main>
+
+<footer></footer>
 
 </body>
 </html>
