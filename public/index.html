@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antalya Tower – Eğitim & Safety Portalı</title>
+
+  <style>
+    :root {
+      --primary: #1f6f73;
+      --accent: #4fb3b8;
+      --card-bg: #ffffff;
+      --text-dark: #1f2d2e;
+      --text-muted: #5f6f73;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        linear-gradient(
+          rgba(15, 60, 62, 0.85),
+          rgba(15, 60, 62, 0.85)
+        ),
+        url("images/hero-tower-1.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 3.5rem 1.2rem 2.2rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #d7eded;
+    }
+
+    .divider {
+      width: 52px;
+      height: 4px;
+      background: var(--accent);
+      margin: 1.2rem auto 0;
+      border-radius: 2px;
+    }
+
+    main {
+      padding: 0 1rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      color: var(--text-dark);
+      border-radius: 22px;
+      padding: 1.6rem 1.7rem;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.22);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .scroll-hint {
+      text-align: center;
+      margin: 0.6rem 0 1.4rem;
+      color: #cfe7e8;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #d0e4e5;
+      padding: 1.8rem 1rem 2.2rem;
+      opacity: 0.85;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding-top: 4rem;
+      }
+      main {
+        padding-bottom: 4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Antalya Tower – Eğitim &amp; Safety Portalı</h1>
+    <p>Antalya Meydan Kontrol Eğitim Ünitesi</p>
+    <div class="divider"></div>
+  </header>
+
+  <main>
+
+    <div class="card">
+      <h2>Eğitim</h2>
+      <p>
+        ATCO ve OJTI personeline yönelik eğitim dokümanları,
+        awareness içerikleri ve senaryo bazlı çalışmalar.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>OJTI</h2>
+      <p>
+        OJTI süreçlerine yönelik rehber dokümanlar,
+        eğitim yaklaşımları ve uygulama destek içerikleri.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Safety</h2>
+      <p>
+        Emniyet farkındalığına yönelik safety bulletin’ler,
+        olay analizleri ve öğrenilen dersler.
+      </p>
+    </div>
+
+    <div class="scroll-hint">
+      ↓ Diğer içerikler için kaydırın
+    </div>
+
+    <div class="card">
+      <h2>Duyurular</h2>
+      <p>
+        Eğitim, safety ve idari süreçlere ilişkin
+        güncel duyuru ve bilgilendirmeler.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Doküman</h2>
+      <p>
+        Referans dokümanlar, prosedürler ve
+        ileride eklenecek PDF / LMS içerikleri.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Hakkında</h2>
+      <p>
+        Bu portal, Antalya Meydan Kontrol Eğitim Ünitesi bünyesinde
+        iç kullanım amacıyla hazırlanmıştır.
+        İçerik koordinasyonu Teoman Köse tarafından yürütülmektedir.
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır<br />
+    Bu platform operasyonel talimat içermez.
+  </footer>
+
+</body>
+</html>
