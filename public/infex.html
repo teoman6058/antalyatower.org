@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antalya Tower – Eğitim & Safety Portalı</title>
+
+<style>
+:root{
+  --primary:#2f6f73;
+  --text-dark:#1f2d2e;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
+}
+
+/* BODY – GÖKYÜZÜ */
+body{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
+    url("images/sky.jpg") center/cover no-repeat fixed;
+  color:var(--text-dark);
+}
+
+/* HEADER */
+header{
+  position:relative;
+  padding:70px 24px 56px;
+  overflow:hidden;
+}
+
+/* LOGO WATERMARK */
+header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("images/logo.png") center/contain no-repeat;
+  opacity:0.25; /* 🔑 A seçeneği */
+  pointer-events:none;
+}
+
+/* HEADER BEYAZ OKUNABİLİRLİK */
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.45);
+  pointer-events:none;
+}
+
+/* HEADER CONTENT */
+.header-content{
+  position:relative;
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{
+  font-size:clamp(32px,6vw,44px);
+  font-weight:700;
+  letter-spacing:.3px;
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:18px;
+  color:#4a5f61;
+}
+
+.accent{
+  margin-top:14px;
+  width:64px;
+  height:6px;
+  border-radius:4px;
+  background:#56b7b5;
+}
+
+/* MAIN */
+main{
+  max-width:1100px;
+  margin:36px auto 80px;
+  padding:0 20px;
+  display:grid;
+  gap:28px;
+}
+
+/* CARDS – SOLUK BEYAZ */
+section{
+  background:rgba(255,255,255,0.78); /* 🔑 kartlar soluk */
+  backdrop-filter:blur(6px);
+  border-radius:22px;
+  padding:26px 28px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.08);
+}
+
+section h2{
+  color:var(--primary);
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:.3px;
+  margin-bottom:10px;
+}
+
+section p{
+  font-size:16px;
+  line-height:1.55;
+  color:#4b5f61;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:28px 16px 40px;
+  font-size:14px;
+  color:#6c7f82;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
+    <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
+    <div class="accent"></div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Eğitim</h2>
+    <p>ATCO ve OJTI personeline yönelik eğitim dokümanları, awareness içerikleri ve senaryo bazlı çalışmalar.</p>
+  </section>
+
+  <section>
+    <h2>OJTI</h2>
+    <p>OJTI süreçlerine yönelik rehber dokümanlar, eğitim yaklaşımları ve uygulama destek içerikleri.</p>
+  </section>
+
+  <section>
+    <h2>Safety</h2>
+    <p>Emniyet farkındalığına yönelik safety bulletin’ler, olay analizleri ve öğrenilen dersler.</p>
+  </section>
+
+  <section>
+    <h2>Doküman</h2>
+    <p>Referans dokümanlar, prosedürler ve ileride eklenecek PDF / LMS içerikleri.</p>
+  </section>
+
+  <section>
+    <h2>Hakkında</h2>
+    <p>Antalya Tower Eğitim & Safety Portalı, meydan kontrol personelinin eğitim ve emniyet farkındalığını desteklemek amacıyla hazırlanmıştır.</p>
+  </section>
+</main>
+
+<footer>
+  © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır
+</footer>
+
+</body>
+</html>
