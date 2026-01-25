@@ -2,117 +2,112 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Antalya Tower – Eğitim & Safety Portalı</title>
 
   <style>
     :root {
-      --primary: #2fa4ad;
-      --dark: #0f3f44;
-      --light: #f5fbfc;
-      --card-bg: #ffffff;
-      --text: #1f2d2f;
+      --turkuaz: #1f6f78;
+      --turkuaz-light: #2fa4ad;
+      --dark: #1e2d2f;
+      --white: #ffffff;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
       min-height: 100vh;
-      color: var(--text);
       background:
         linear-gradient(
-          rgba(15, 63, 68, 0.65),
-          rgba(15, 63, 68, 0.75)
+          rgba(20, 60, 65, 0.75),
+          rgba(20, 60, 65, 0.75)
         ),
-        url("/images/banner/hero-tower-1.jpg") center / cover no-repeat fixed;
+        url("images/banner/hero-tower-1.jpg") center / cover no-repeat fixed;
+      color: var(--white);
     }
 
     header {
+      padding: 48px 20px 32px;
       text-align: center;
-      padding: 60px 20px 30px;
-      color: #ffffff;
     }
 
     header h1 {
       font-size: clamp(28px, 5vw, 44px);
       font-weight: 700;
-      letter-spacing: 0.4px;
+      margin-bottom: 12px;
     }
 
     header p {
-      margin-top: 10px;
-      font-size: 15px;
+      font-size: clamp(14px, 2.5vw, 18px);
       opacity: 0.9;
     }
 
-    .header-divider {
-      width: 90px;
-      height: 3px;
+    .divider {
+      width: 80px;
+      height: 4px;
+      background: var(--turkuaz-light);
       margin: 24px auto 0;
-      background: var(--primary);
-      border-radius: 3px;
+      border-radius: 4px;
     }
 
     main {
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .section-grid {
+      margin: 40px auto 80px;
+      padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
+      gap: 28px;
     }
 
     .card {
-      background: var(--card-bg);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--dark);
       border-radius: 18px;
-      padding: 26px 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-decoration: none;
-      color: inherit;
+      padding: 28px 26px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.25);
     }
 
     .card h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: var(--dark);
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--turkuaz);
     }
 
     .card p {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.6;
-      color: #4b5f62;
     }
 
     footer {
-      margin-top: 60px;
-      padding: 24px 20px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(0, 0, 0, 0.55);
       text-align: center;
-      font-size: 12px;
-      color: #425b5f;
+      padding: 18px 12px;
+      font-size: 13px;
+      opacity: 0.9;
     }
 
-    @media (max-width: 768px) {
+    footer span {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 600px) {
       header {
-        padding-top: 50px;
-      }
-      footer {
-        font-size: 11px;
+        padding-top: 36px;
       }
     }
   </style>
@@ -121,60 +116,64 @@
 <body>
 
   <header>
+    <!-- Logo alanı (SVG gelince buraya koyacağız) -->
+    <!-- <img src="images/logo-ltai.svg" alt="LTAI Logo" height="80"> -->
+
     <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
     <p>Antalya Meydan Kontrol Eğitim Ünitesi</p>
-    <div class="header-divider"></div>
+    <div class="divider"></div>
   </header>
 
   <main>
-    <section class="section-grid">
 
-      <a href="egitim.html" class="card">
-        <h2>Eğitim</h2>
-        <p>
-          ATCO ve OJTI personeline yönelik eğitim dokümanları,
-          awareness içerikleri ve senaryo bazlı çalışmalar.
-        </p>
-      </a>
+    <div class="card" onclick="location.href='egitim.html'">
+      <h2>Eğitim</h2>
+      <p>
+        ATCO ve OJTI personeline yönelik eğitim dokümanları,
+        awareness içerikleri ve senaryo bazlı çalışmalar.
+      </p>
+    </div>
 
-      <a href="safety.html" class="card">
-        <h2>Safety</h2>
-        <p>
-          Emniyet farkındalığına yönelik safety bulletin’ler,
-          olay analizleri ve öğrenilen dersler.
-        </p>
-      </a>
+    <div class="card" onclick="location.href='safety.html'">
+      <h2>Safety</h2>
+      <p>
+        Emniyet farkındalığına yönelik safety bulletin’ler,
+        olay analizleri ve öğrenilen dersler.
+      </p>
+    </div>
 
-      <a href="duyurular.html" class="card">
-        <h2>Duyurular</h2>
-        <p>
-          Eğitim, safety ve idari süreçlere ilişkin
-          güncel duyuru ve bilgilendirmeler.
-        </p>
-      </a>
+    <div class="card" onclick="location.href='duyurular.html'">
+      <h2>Duyurular</h2>
+      <p>
+        Eğitim, safety ve idari süreçlere ilişkin
+        güncel duyuru ve bilgilendirmeler.
+      </p>
+    </div>
 
-      <a href="dokuman.html" class="card">
-        <h2>Doküman</h2>
-        <p>
-          Referans dokümanlar, prosedürler ve
-          ileride eklenecek PDF / LMS içerikleri.
-        </p>
-      </a>
+    <div class="card" onclick="location.href='dokuman.html'">
+      <h2>Doküman</h2>
+      <p>
+        Referans dokümanlar, prosedürler ve
+        ileride eklenecek PDF / LMS içerikleri.
+      </p>
+    </div>
 
-      <a href="hakkinda.html" class="card">
-        <h2>Hakkında</h2>
-        <p>
-          Portalın amacı, kullanım kapsamı ve
-          içerik yaklaşımı hakkında bilgiler.
-        </p>
-      </a>
+    <div class="card" onclick="location.href='hakkinda.html'">
+      <h2>Hakkında</h2>
+      <p>
+        Portalın amacı, kullanım kapsamı ve
+        içerik yaklaşımı hakkında bilgiler.
+      </p>
+    </div>
 
-    </section>
   </main>
 
   <footer>
-    © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır<br />
-    Bu platform operasyonel talimat içermez.
+    © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır
+    <span>
+      Bu platform operasyonel talimat içermez.
+      Canlı operasyonlarda yalnızca resmî ve güncel dokümanlar esas alınır.
+    </span>
   </footer>
 
 </body>
