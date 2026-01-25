@@ -2,134 +2,127 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antalya Tower – Eğitim & Safety Portalı</title>
 
   <style>
     :root{
-      --primary:#2f6f6f;
-      --accent:#4fb3b3;
-      --text:#1f2f2f;
-      --muted:#6f7f7f;
-      --card-bg:rgba(255,255,255,0.78);
+      --primary:#2f6f73;
+      --accent:#4fb3b8;
+      --text-dark:#1f2f30;
+      --card-bg:rgba(255,255,255,0.75);
     }
 
     *{
       box-sizing:border-box;
       margin:0;
       padding:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     body{
-      background:url("public/images/sky.jpg") no-repeat center center fixed;
-      background-size:cover;
-      color:var(--text);
+      background: url("images/Sky.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-dark);
     }
 
     /* HEADER */
     header{
-      background:rgba(255,255,255,0.55);
-      backdrop-filter:blur(6px);
-      padding:60px 20px 55px;
+      position: relative;
+      padding: 48px 20px 36px;
+      background: rgba(255,255,255,0.82);
+      overflow: hidden;
+    }
+
+    /* WATERMARK LOGO */
+    header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: url("images/logo.png") no-repeat center center;
+      background-size: 90% auto;
+      opacity: 0.08;
+      pointer-events:none;
     }
 
     .header-inner{
+      position:relative;
       max-width:1100px;
-      margin:0 auto;
-    }
-
-    .logo{
-      max-width:320px;
-      width:100%;
-      opacity:0.85;
-      margin-bottom:22px;
+      margin:auto;
     }
 
     h1{
-      font-size:2.3rem;
+      font-size: 32px;
       font-weight:700;
       line-height:1.25;
+      margin-bottom:10px;
     }
 
     .subtitle{
-      margin-top:12px;
-      font-size:1.05rem;
-      color:var(--muted);
+      font-size:16px;
+      color:#4b5f60;
     }
 
-    .divider{
+    .accent-line{
       width:72px;
       height:6px;
       background:var(--accent);
       border-radius:4px;
-      margin-top:20px;
+      margin-top:16px;
     }
 
     /* MAIN */
     main{
       max-width:1100px;
-      margin:50px auto;
-      padding:0 20px 80px;
+      margin: 40px auto 60px;
+      padding: 0 16px;
     }
 
     .card{
-      background:var(--card-bg);
-      border-radius:22px;
-      padding:28px 30px;
-      margin-bottom:28px;
-      box-shadow:0 18px 40px rgba(0,0,0,0.08);
+      background: var(--card-bg);
+      border-radius:20px;
+      padding:24px;
+      margin-bottom:24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      backdrop-filter: blur(6px);
     }
 
     .card h2{
-      color:var(--primary);
-      font-size:1.35rem;
+      color: var(--primary);
+      font-size:22px;
       font-weight:700;
-      margin-bottom:12px;
-      letter-spacing:0.4px;
+      letter-spacing:0.3px;
+      margin-bottom:10px;
     }
 
     .card p{
-      color:#5f6f6f;
-      line-height:1.55;
-      font-size:1rem;
+      color:#4b5f60;
+      line-height:1.6;
+      font-size:15px;
     }
 
     /* FOOTER */
     footer{
-      background:rgba(255,255,255,0.6);
-      backdrop-filter:blur(6px);
-      padding:18px 20px;
       text-align:center;
-      font-size:0.85rem;
-      color:#6f7f7f;
-    }
-
-    @media (max-width:768px){
-      h1{font-size:1.9rem;}
-      .logo{max-width:240px;}
+      padding:24px 16px;
+      font-size:13px;
+      color:#5f6f70;
+      background: rgba(255,255,255,0.6);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="header-inner">
-
-      <img src="public/images/logo.png" alt="LTAI Logo" class="logo" />
-
-      <h1>Antalya Tower – Eğitim & Safety Portalı</h1>
-      <p class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</p>
-      <div class="divider"></div>
-
+      <h1>Antalya Tower – Eğitim &amp; Safety Portalı</h1>
+      <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
+      <div class="accent-line"></div>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main>
-
     <section class="card">
       <h2>Eğitim</h2>
       <p>
@@ -165,15 +158,13 @@
     <section class="card">
       <h2>Hakkında</h2>
       <p>
-        Antalya Tower Eğitim & Safety Portalı, meydan kontrol
-        personelinin eğitim ve emniyet farkındalığını
-        desteklemek amacıyla hazırlanmıştır.
+        Antalya Tower Eğitim &amp; Safety Portalı, meydan kontrol
+        personelinin eğitim ve emniyet farkındalığını desteklemek
+        amacıyla hazırlanmıştır.
       </p>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
     © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır
   </footer>
