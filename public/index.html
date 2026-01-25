@@ -6,68 +6,82 @@
   <title>Antalya Tower – Eğitim & Safety Portalı</title>
   <style>
     :root {
-      --accent: #2fa4ad;
-      --text: #1f2d3d;
-      --card-bg: rgba(255, 255, 255, 0.88);
+      --primary: #2f6f73;
+      --text: #1f2f30;
+      --card-bg: rgba(235, 245, 248, 0.88);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
       background:
-        linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)),
-        url("images/backgrounds/sky.jpg") center/cover fixed no-repeat;
+        radial-gradient(1200px 600px at 10% 0%, #8fb9c6, transparent 60%),
+        radial-gradient(1000px 500px at 90% 20%, #76a5b4, transparent 55%),
+        radial-gradient(900px 500px at 50% 80%, #5f90a1, transparent 60%),
+        linear-gradient(180deg, #6b9ead 0%, #4d7e8e 100%);
       min-height: 100vh;
     }
 
     header {
-      padding: 60px 20px 20px;
-      text-align: left;
-      min-height: 60vh;
-      background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.9));
+      padding: 20px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      gap: 12px;
     }
 
-    header img {
-      width: 100px;
-      margin-bottom: 10px;
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    header h1 {
-      font-size: 2rem;
-      font-weight: bold;
-      margin: 0;
+    .logo-row img {
+      height: 54px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
     }
 
-    header p {
-      font-size: 1rem;
-      margin-top: 4px;
+    .logo-text h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.3;
     }
 
-    section {
-      padding: 20px;
-      max-width: 720px;
-      margin: 0 auto;
+    .logo-text .subtitle {
+      font-size: 0.95rem;
+      color: #e4f2f4;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 32px auto 64px;
+      padding: 0 16px;
     }
 
     .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      text-decoration: none;
-      color: inherit;
       display: block;
+      text-decoration: none;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.5);
       transition: transform 0.2s ease;
+      color: inherit;
     }
 
     .card:hover {
@@ -75,34 +89,42 @@
     }
 
     .card h2 {
-      font-size: 1.2rem;
-      color: var(--accent);
+      color: var(--primary);
+      font-size: 1.25rem;
+      font-weight: 700;
       margin-bottom: 10px;
+      letter-spacing: 0.3px;
     }
 
     .card p {
-      font-size: 1rem;
-      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #465c5e;
     }
 
     footer {
       text-align: center;
-      padding: 24px 16px;
-      font-size: 0.9rem;
-      color: #3f5f66;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(4px);
+      padding: 26px 16px;
+      font-size: 13px;
+      color: #e0f2f5;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <img src="images/logo-transparent.png" alt="Antalya Tower Logo" />
-    <h1>Antalya Tower – Eğitim &amp; Safety Portalı</h1>
-    <p>Antalya Meydan Kontrol Eğitim Ünitesi</p>
+    <div class="header-inner">
+      <div class="logo-row">
+        <img src="images/logo-transparent.png" alt="Antalya Tower Logo" />
+        <div class="logo-text">
+          <h1>Antalya Tower – Eğitim &amp; Safety Portalı</h1>
+          <div class="subtitle">Antalya Meydan Kontrol Eğitim Ünitesi</div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section>
+  <main>
     <a href="egitim.html" class="card">
       <h2>Eğitim</h2>
       <p>ATCO ve OJTI personeline yönelik eğitim dokümanları, awareness içerikleri ve senaryo bazlı çalışmalar.</p>
@@ -127,7 +149,7 @@
       <h2>Hakkında</h2>
       <p>Antalya Tower Eğitim &amp; Safety Portalı, meydan kontrol personelinin eğitim ve emniyet farkındalığını desteklemek amacıyla hazırlanmıştır.</p>
     </a>
-  </section>
+  </main>
 
   <footer>
     © 2026 Antalya Meydan Kontrol Eğitim Ünitesi · İç kullanım amaçlıdır
