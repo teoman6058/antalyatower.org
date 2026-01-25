@@ -3,161 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Antalya Tower | Eğitim & Safety Portalı</title>
-
-<meta name="description"
-content="Antalya Tower Meydan Kontrol Eğitim Ünitesi için ATCO ve OJTI personeline yönelik eğitim ve emniyet farkındalık portalı.">
+<title>Antalya Tower – Eğitim & Safety Portalı</title>
 
 <style>
-:root{
-  --bg:#0b1624;
-  --panel:#14243c;
-  --accent:#f6b73c;
-  --text:#ffffff;
-  --muted:#b6c2d9;
-  --warn:#2a3b5c;
+/* ===== GENEL ===== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f2a3a;
+  background: url("images/sky-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  background: rgba(15, 42, 58, 0.85);
+  backdrop-filter: blur(4px);
 }
 
-/* HEADER */
-header{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 22px;
-  background:#08101d;
-  border-bottom:1px solid #1c2b45;
-}
-header h1{
-  font-size:15px;
-  margin:0;
-  font-weight:600;
-}
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-}
-nav a{
-  color:var(--muted);
-  text-decoration:none;
-  font-size:14px;
-}
-nav a:hover{color:var(--accent)}
-
-/* SEARCH */
-.search input{
-  padding:8px 10px;
-  border-radius:6px;
-  border:none;
-  width:200px;
+header .title {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
-/* WARNING STRIP */
-.warning{
-  background:var(--warn);
-  color:#fff;
-  padding:10px 16px;
-  font-size:14px;
-  text-align:center;
+nav a {
+  margin-left: 16px;
+  color: #d7e9f2;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-/* HERO */
-.hero{
-  min-height:65vh;
-  background:
-    linear-gradient(rgba(8,16,29,.78),rgba(8,16,29,.78)),
-    url("images/banner/hero-tower-1.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-}
-.hero h2{
-  font-size:34px;
-  margin-bottom:10px;
-}
-.hero p{
-  max-width:720px;
-  margin:auto;
-  color:var(--muted);
-  font-size:16px;
+nav a:hover { color: #ffffff; }
+
+/* ===== ANA ALAN ===== */
+main {
+  padding: 40px 20px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* BUTTONS */
-.actions{
-  margin-top:30px;
-  display:flex;
-  gap:16px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.btn{
-  padding:14px 24px;
-  border-radius:8px;
-  font-weight:600;
-  text-decoration:none;
-}
-.primary{
-  background:var(--accent);
-  color:#000;
-}
-.secondary{
-  background:#1c2f4d;
-  color:#fff;
+/* ===== GİRİŞ METNİ ===== */
+.intro {
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* GRID */
-.grid{
-  padding:50px 20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-}
-.card{
-  background:var(--panel);
-  padding:24px;
-  border-radius:14px;
-}
-.card h3{margin-top:0}
-.card p{
-  color:var(--muted);
-  font-size:14px;
+.intro h1 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-/* DISCLAIMER */
-.disclaimer{
-  background:#0a1424;
-  border-top:1px solid #1c2b45;
-  padding:16px 20px;
-  font-size:13px;
-  color:var(--muted);
+.intro p {
+  font-size: 15px;
+  line-height: 1.65;
 }
 
-/* FOOTER */
-footer{
-  border-top:1px solid #1c2b45;
-  padding:18px 20px;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
+/* ===== KARTLAR ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
 }
 
-/* MOBILE */
-@media(max-width:640px){
-  header{flex-direction:column;align-items:flex-start}
-  .search input{width:100%}
-  .hero h2{font-size:26px}
+.card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 50px;
+  padding: 14px 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #e6eef3;
+  background: rgba(15, 42, 58, 0.85);
 }
 </style>
 </head>
@@ -165,103 +121,65 @@ footer{
 <body>
 
 <header>
-  <h1>Antalya Tower Portal</h1>
-
+  <div class="title">Antalya Tower – Eğitim & Safety Portalı</div>
   <nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="courses.html">Eğitim</a>
-    <a href="events.html">Safety</a>
-    <a href="notice.html">Duyurular</a>
-    <a href="research.html">Doküman</a>
-    <a href="contact.html">İletişim</a>
+    <a href="egitim.html">Eğitim</a>
+    <a href="safety.html">Safety</a>
+    <a href="duyurular.html">Duyurular</a>
+    <a href="dokuman.html">Doküman</a>
+    <a href="hakkinda.html">Hakkında</a>
   </nav>
-
-  <div class="search">
-    <input id="searchInput" type="text" placeholder="Ara (bilgi taraması)...">
-  </div>
 </header>
 
-<div class="warning">
-⚠️ Bu platform operasyonel talimat içermez. Canlı operasyonlarda yalnızca resmî ve güncel dokümanlar esas alınır.
-</div>
+<main>
 
-<section class="hero">
-  <div>
-    <h2 id="heroTitle">Antalya Meydan Kontrol Eğitim Ünitesi</h2>
+  <!-- GİRİŞ -->
+  <section class="intro">
+    <h1>Ana Sayfa</h1>
     <p>
-      Bu portal; ATCO ve OJTI personeli için
-      <strong>eğitim, değerlendirme ve emniyet farkındalığı</strong>
-      kapsamında hazırlanmış içerikleri barındırır.
-      Yer alan bilgiler operasyonel uygulama yerine geçmez.
+      Antalya Meydan Kontrol Eğitim Ünitesi bünyesinde oluşturulan bu portal,
+      ATCO ve OJTI personeline yönelik eğitim ve emniyet farkındalığı
+      kapsamında değerlendirilen içeriklere erişim sağlamak amacıyla
+      tasarlanmıştır.
     </p>
+  </section>
 
-    <div class="actions">
-      <a class="btn primary" href="notice.html">Safety Bulletins (Güncel)</a>
-      <a class="btn secondary" href="/ojti">OJTI Portal</a>
-    </div>
-  </div>
-</section>
+  <!-- ANA BAŞLIK KARTLARI -->
+  <section class="card-grid">
 
-<section class="grid" id="content">
-  <div class="card">
-    <h3>Eğitim</h3>
-    <p>
-      ATCO temel ve tazeleme eğitimleri kapsamında kullanılan
-      senaryolar, örnek olaylar ve bilgi hatırlatmaları.
-    </p>
-  </div>
+    <a href="egitim.html" class="card">
+      <h2>Eğitim</h2>
+      <p>Eğitim dokümanları, awareness içerikleri ve senaryo bazlı çalışmalar.</p>
+    </a>
 
-  <div class="card">
-    <h3>Doküman</h3>
-    <p>
-      Yürürlükteki resmî dokümanlara referans niteliğinde,
-      eğitim ve farkındalık amaçlı içerikler.
-    </p>
-  </div>
+    <a href="safety.html" class="card">
+      <h2>Safety</h2>
+      <p>Safety Bulletin’ler ve emniyet farkındalığına yönelik içerikler.</p>
+    </a>
 
-  <div class="card">
-    <h3>Safety</h3>
-    <p>
-      Emniyet olayları üzerinden çıkarılan derslerin,
-      ATCO perspektifinden değerlendirilmesi.
-    </p>
-  </div>
+    <a href="duyurular.html" class="card">
+      <h2>Duyurular</h2>
+      <p>Eğitim ve organizasyona yönelik bilgilendirmeler.</p>
+    </a>
 
-  <div class="card">
-    <h3>Duyurular</h3>
-    <p>
-      Eğitim, organizasyon ve bilgilendirme kapsamındaki
-      güncel paylaşımlar.
-    </p>
-  </div>
-</section>
+    <a href="dokuman.html" class="card">
+      <h2>Doküman</h2>
+      <p>Referans ve arşiv niteliğindeki dokümanlar.</p>
+    </a>
 
-<div class="disclaimer">
-<strong>Sorumluluk Reddi:</strong><br>
-Bu portalda yer alan tüm içerikler bilgilendirme, eğitim ve emniyet farkındalığı amacıyla hazırlanmıştır.
-Hiçbir içerik; yürürlükteki mevzuat, AIP, lokal talimatlar veya operasyonel prosedürlerin yerine geçmez.
-Operasyonel uygulamalarda yalnızca resmî ve güncel kaynaklar esas alınmalıdır.
-</div>
+    <a href="hakkinda.html" class="card">
+      <h2>Hakkında</h2>
+      <p>Portalın kapsamı, amacı ve kullanım çerçevesi.</p>
+    </a>
+
+  </section>
+
+</main>
 
 <footer>
-2026 Antalya Meydan Kontrol Eğitim Ünitesi – İç kullanım amaçlıdır.<br>
-Teoman KÖSE tarafından hazırlanmıştır.
+  2026 Antalya Meydan Kontrol Eğitim Ünitesi – İç kullanım amaçlıdır.<br>
+  İçerik koordinasyonu: Teoman KÖSE
 </footer>
-
-<script>
-/* Girişe göre başlık (OJTI) */
-if(document.referrer.toLowerCase().includes("ojti")){
-  document.getElementById("heroTitle").innerText="OJTI Eğitim ve Değerlendirme Portalı";
-}
-
-/* SEARCH – sayfadaki her şeyi tarar */
-document.getElementById("searchInput").addEventListener("keyup",e=>{
-  const q=e.target.value.toLowerCase();
-  document.querySelectorAll(".card").forEach(c=>{
-    c.style.display=c.innerText.toLowerCase().includes(q)?"block":"none";
-  });
-});
-</script>
 
 </body>
 </html>
