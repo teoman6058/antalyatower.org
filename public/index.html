@@ -7,10 +7,16 @@
 
 <style>
 :root{
-  --blue-bg:#dceff3;
   --primary:#2f6f73;
   --text:#1f2f30;
-  --card-bg:rgba(232,244,248,0.85);
+
+  /* DALGALI MAVİ TONLAR */
+  --wave-1:#b9dfe8;
+  --wave-2:#9fcbd6;
+  --wave-3:#86b6c4;
+
+  /* KART RENGİ */
+  --card-bg:rgba(235,245,248,0.88);
 }
 
 *{
@@ -21,24 +27,28 @@
 }
 
 body{
-  background:var(--blue-bg);
   color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% 0%, var(--wave-1), transparent 60%),
+    radial-gradient(1000px 500px at 90% 20%, var(--wave-2), transparent 55%),
+    radial-gradient(900px 500px at 50% 80%, var(--wave-3), transparent 60%),
+    linear-gradient(180deg, #a7cfda 0%, #7fb0bf 100%);
+  min-height:100vh;
 }
 
 /* ===== HEADER ===== */
 header{
   position:relative;
   padding:28px 20px 48px;
-  background:var(--blue-bg);
   overflow:hidden;
 }
 
-/* BACKGROUND LOGO (WATERMARK) */
+/* WATERMARK LOGO */
 header::after{
   content:"";
   position:absolute;
   inset:0;
-  background:url("images/logo.png") center/80% auto no-repeat;
+  background:url("images/logo.png") center/75% auto no-repeat;
   opacity:0.05;
   pointer-events:none;
 }
@@ -71,7 +81,7 @@ h1{
 
 .subtitle{
   font-size:16px;
-  color:#4c6365;
+  color:#3f5f66;
 }
 
 /* ===== MAIN ===== */
@@ -83,13 +93,13 @@ main{
 
 .card{
   background:var(--card-bg);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border-radius:22px;
   padding:26px;
   margin-bottom:26px;
   box-shadow:
-    0 8px 22px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.45);
+    0 10px 26px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.5);
 }
 
 .card h2{
@@ -111,8 +121,7 @@ footer{
   text-align:center;
   padding:26px 16px;
   font-size:13px;
-  color:#4c6365;
-  background:var(--blue-bg);
+  color:#3f5f66;
 }
 </style>
 </head>
